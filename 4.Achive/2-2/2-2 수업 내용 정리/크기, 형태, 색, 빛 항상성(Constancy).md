@@ -1,0 +1,8 @@
+- 크기 항상성(Size Constancy)
+	- ![[SmartSelect_20231113_205214_Flexcil.jpg]]
+- 형태 항상성(Shape Constancy)
+	- ![[SmartSelect_20231113_205255_Flexcil.jpg]]
+- 색 항상성(Color Constancy)
+	- ![[SmartSelect_20231113_205308_Flexcil.jpg]]
+- 밝기 항상성(Lightness constancy)
+	- ![[SmartSelect_20231113_205319_Flexcil.jpg]]

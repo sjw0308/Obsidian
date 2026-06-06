@@ -1,0 +1,48 @@
+- Making a Better Branch Guess
+	- For ALU instructions (+LD, ST)
+		- Cannot do better than guessing nextPC = PC + 4
+	- For Branch/Jump instructions
+		- Need to guess two things
+			- direction
+			- target address
+		- Not taken을 기준으로 guess하지 말고, taken을 기준으로 guess하자!
+		- Then, where to jump?
+			- Must make a guess based only on the current PC
+			- The same instruction will be executed repeatedly in a program
+			- PC-offset branch/jump target is static (except for JALR)
+			- We are allowed to be wrong some of the time
+
+- Branch Target Buffer (BTB)
+	- A giant table indexed by PC
+	- Returns the guess for nextPC
+	- When encountering a PC for the first time, store in BTB
+		- PC + 4 (if ALU/LD/ST)
+		- PC + offset (if Branch/JAL)
+		- ??? (if JALR)
+- BTB Implementation
+	- PC = unused + BTB idx(N bits) + 2 bits (align 때문에 0)
+	- BTB idx $\rightarrow$ BTB with $2^N$ entries $\rightarrow$ nPC
+	- Large BTB = reduced collision, but has drawbacks in energy and cost
+	- ![[SmartSelect_20240408_191504_Flexcil.jpg]]
+- Advanced BTB
+	- unused 부분을 tag로 활용
+	- tag matching으로 BTB의 값을 사용할지 PC + 4를 사용할지 정함
+	- Branch/jump instruction만 BTB에 따로 저장해둠
+	- ![[SmartSelect_20240408_191545_Flexcil.jpg]]
+- More Advanced Prediction
+	- 같은 Branch는 taken이든 아니든 이전과 같은 결과를 낼 확률이 높음
+	- History를 만들어서 이전 같은 Branch가 taken이었는지 아닌지 기억한다. 
+	- ![[SmartSelect_20240408_192623_Flexcil.jpg]]
+- Branch Prediction State Machine
+	- 1-bit
+		- Decision = Jump if \[PHT] $\ge$ 1
+		- prediction에 상관 없이 해당 Branch가 taken이면 PHT = 1
+	- 2-bit
+		- Decision= Jump if \[PHT] $\ge$ 2b'10
+		- 2b'11: Strongly taken, 2b'10: Weakly taken, 2b'01: Weakly not taken, 2b'00: Strongly not taken
+		- Saturation Counter
+			- Not taken이 들어올 때 변화 경로: 11 $\rightarrow$ 10 $\rightarrow$ 01 $\rightarrow$ 00
+			- Taken이 들어올 떄 변화 경로: 00 $\rightarrow$ 01 $\rightarrow$ 10 $\rightarrow$ 11
+		- Hysteresis Counter
+			- Not taken이 들어올 때 변화 경로: 11 $\rightarrow$ 10 $\rightarrow$ 00
+			- Taken이 들어올 떄 변화 경로: 00 $\rightarrow$ 01 $\rightarrow$ 11

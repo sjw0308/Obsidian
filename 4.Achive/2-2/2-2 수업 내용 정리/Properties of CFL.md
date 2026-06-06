@@ -1,0 +1,125 @@
+- CFG normal form
+	- Simplification of CFG
+	- Transform an arbitrary CFG into an equivalent form that satisfies certain restrictions of its form
+		- No useless productions (Do all the variables derive strings?)
+		- No $\epsilon$-productions ($A\rightarrow\epsilon$)
+		- No unit-productions ($A\rightarrow B$)
+	- Use the substitution rule as a basic tool
+	- Types of normal form
+		- Chomsky normal form 
+		- Greibach normal form
+
+- Substitution rule
+	- Let G = (V, T, S, P) be a CFG. Suppose that P contains a production of the form $A\rightarrow x_1Bx_2$
+	- Assume that A and B are different variables and that $B\rightarrow y_1|y_2|\dots|y_n$ is the set of all productions in P which have B as the left side
+	- Let $\hat G$ = (V, T, S, $\hat P$) be the grammar in which $\hat P$ is constructed by deleting $A\rightarrow x_1Bx_2$ from P and adding to it $A\rightarrow x_1y_1x_2| x_1y_2x_2|\dots|x_1y_nx_2$ Then L($\hat G$) = L(G)
+- Simplification of CFG
+	- _Theorem_ - Let L be CFL that does not contain $\epsilon$. Then there exists a CFG for L that generates L and that does not have useless productions, $\epsilon$-productions, unit-productions
+	- Cleaning up a Grammar
+		- Start with a CFG for L
+		- Perform the following steps in order:
+			1. Elimination $\epsilon$-productions
+			2. Elimination unit productions
+			3. Elimination variables that derive to terminal string
+			4. Elimination variables not reached from the start symbol
+
+- Chomsky normal form
+	- A CFG is  said to be in Chomsky Normal Form (CNF) if every productions is one of these two froms
+		- $A\rightarrow BC$ (body is two variables)
+		- $A\rightarrow a$ (body is single terminal)
+	- Generating Chomsky normal form
+		1. Clean the grammar so that every body is either a single terminal or of length at least 2
+		2. For each body $\neq$ a single terminal, make the body all variables
+			- For each terminal a create new variable $A_a$ and production $A_a \rightarrow a$ 
+			- Replace a by $A_a$ in bodies of length $\geq$ 2
+		3. Break right sides longer that 2 into a chain of productions with body of two variables
+
+- Pumping Lemma for CFL
+	- We can always find two pieces of any sufficiently long string to __pump__ in tandem. If we repeat each of the two pieces the same number of times, we get another string in the language
+	- Let L be a CFL. Then there exists a positive integer n such that if z is any string in L with $|z| \geq n$ then we can write z = uvwxy subject to the following
+		- Conditions
+			- $|vwx| \leq n$ That is the middle portion is not too long
+			- $|vx| > 0$ Since v and x are the pieces to be pumped, this condition says at least one of the strings we pump must not empty
+		- $\forall i \geq 0, uv^iwx^iy \in L$ 
+	- Proof
+		- Start with a CNF, G = (V, T, S, P) such that L(G) = L - {$\epsilon$}. Let G have m variables Pick n = $2^m$
+		- Let z, with $|z| \geq n = 2^m$, be in L
+			- A parse tree with yield z must gave a path of length m+1 or more. Since the last node on any path is labeled by a terminal, the parse tree for z has a path with at least m+1 variables 
+			- Consider some longest path. Since there are only m different variables among m+1 nodes of the path, we can find two nodes with the same label
+
+- Decision Properties
+	- There are algorithms to decide if
+		- CFL L is empty
+		- CFL L is infinite
+		- String w is in CFL L
+	- Many questions that can be decided for regular sets cannot be decided for CFL's
+		- e.g. Are two CFL's the same? Are two CFL's disjoint?
+	- Testing Infiniteness
+		- Check if there is a parse tree of depth n+1 where n is the number of variables. L(G) is infinite iff there is a parse tree of depth n+1 or more
+	- Testing Membership
+		- Want to know if string w is in L(G)
+		- Assume G is in CNF (if $w = \epsilon$, 예외처리)
+		- CYK Algorithm
+			- Run in time $O(n^3)$, where n = |w|
+			- Let $w = a_1a_2\dots a_n$ 
+			- Construct an n-by-n triangular array of sets of variables
+				- $X_{ij} = \{variables\  A|A\Rightarrow^* a_i\dots a_j\}$ 
+			- Induction on j-i+1
+				- Basis $X_{ii} = \{A | A\rightarrow a_i\in G\}$
+				- Induction: $X_{ij} = \{A|there\ is\ a\ production\ A\rightarrow BC\ where\ B\in X_{ik},\ C\in X_{k+1, j},\ i\leq k \leq j\}$ 
+				- Finally ask if $S \in X_{1n}$ 
+
+- Closure Property of CFL
+	- Let L and M be CLF's with grammar G and H, respectively. Assume G and H have no variables in common
+	- Let $S_1$ and $S_2$ be the start symbols of G and H
+	- Closure under Union
+		- Combine all the symbols and productions of G and H
+		- Add a new start symbol S
+		- Add production $S\rightarrow S_1|S_2$
+		- In the new grammar, all derivations start with S
+	- Closure Under Concatenation
+		- Combine all symbols and productions of G and H
+		- Add a new start symbol S
+		- Add production $S\rightarrow S_1S_2$
+		- Every derivation from S results i a string in L followed by one in M
+	- Closure Under Star
+		- Introduce to G a new start symbol S
+		- Add production $S\rightarrow S_1S|\epsilon$
+	- Closure Under Reversal
+		- Reverse the body of every productions
+	- Closure Under Homomorphism
+		- Let h be a homomorphism on the terminal symbols of G. Construct a grammar for h(L) by replacing each terminal symbol a by h(a)
+	- Closure Under Inverse Homomorphism
+		- Let L = L(P) for some PDA P
+		- Construct PDA P' to accept $h^{-1}(L)$
+		- P' simulates P, but keeps a buffer that holds the result of applying h to one input symbol as one component of a two-component state
+		- Formal Construction of P'
+			- States are pairs \[q, w], where
+				- q is a state of P
+				- w is a suffix of h(a) for some symbol a
+				- Start state of P' is $[q_0, \epsilon]$
+				- Final states of P' are the states $[q, \epsilon]$ (q is final state of P)
+			- Symbols of P'
+				- Stack symbols of P' are those of P
+				- Input symbols of P' are the symbols to which h applies
+			- Transition Function of P'
+				- $\delta'([q, \epsilon], a, X) = \{([q, h(a)], X)\}$ for an input symbol a and a stack symbol X
+				- $\delta'([q, bw], \epsilon, X)$ contains $([p, w], \alpha)$ if $\delta (q, b, X)$ contains $(p, \alpha)$, where b is either an input symbol of P or $\epsilon$ 
+	- Nonclosure Under Intersection
+		- We know that $L_1 = \{0^n1^n2^n | n>1\}$ is not a CFL (use the pumping lemma)
+		- However, $L_2 = \{0^n1^n2^i|n>1, i>1\}$ is CFG: $S\rightarrow AB,\ A\rightarrow 0A1\ | \ 01,\ B \rightarrow 2B\ |\ 2$ 
+		- So is $L_3 = \{0^i1^n2^n|n>1,i>1\}$
+		- But $L_1 = L_2\cap L_3$
+	- Nonclosure Under Difference
+		- $L\cap M = L-(L-M)$
+	- Intersection with a Regular Language
+		- Intersection of two CFL's need not be context free
+		- But the intersection of a CFL with a regular language is always a CFL
+		- Let the DFA A have transition function $\delta_A$
+		- Let the PDA P have transition function $\delta_P$
+		- States of combined PDA are \[q, p] (q is a state of A and p a state of P)
+		- $\delta ([q, p], a, X)$ contains $([\delta_A(q,a),r],\alpha)\ if\ \delta_P(p, a, X)$ contains (r, $\alpha$)
+			- Note a could be $\epsilon$, in which case $\delta_A(q, a) = q$
+		- Final states of combined PDA are those \[q, p] such that q is a final state of A and p is an accepting of P
+		- Initial state os the pair $[q_0, p_0]$ consisting of the initial states of the initial states of each
+		- Easy induction $([q_0,p_0], w, Z_0)\vdash^* ([q, p],\epsilon,\alpha)$ if and only if $\delta_A(q_0, w) = q$ and in $P: (p_0,w,Z_0)\vdash^* (p,\epsilon,\alpha)$ 

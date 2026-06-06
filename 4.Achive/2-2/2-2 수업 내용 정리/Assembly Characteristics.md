@@ -1,0 +1,9 @@
+- Data types
+	- Integer data: 1,2,4 or 8 byte . data values. Addresses
+	- Floating-point data: 4,8 or 10 bytes. 
+	- Code: byte sequences encoding series of instructions
+	- Array와 Struct 같은 aggregate type은 memory상 연속된 data들일 뿐 따로 type은 없다
+- Operations (on register or memory)
+	- Arithmetic functions
+	- Data transfer를 위한 operation
+	- Transfer control: code의 흐름을 조절하는 jump같은 operation

@@ -1,0 +1,14 @@
+- 비둘기 집의 원리: 어 그거
+- Pumping Lemma
+	- Let L be a regular language. Then there exists a number p such that every string $w\in L \ \ with \ \ |w| \ge p$ can be decomposed as below and p is called pumping length
+	- w = xyz such that
+		- For each $i\ge 0,\ \ xy^iz\in L$
+		- $y\ne\epsilon$
+		- $|xy|\le p$
+	- 이 Lemma에서 가장 주의할 점은 p보다 길이가 긴 **w가 있다면** 해당 조건을 만족한다는 것이다. 그러므로 해당 조건에 맞는 w가 없으면 의미가 없는 Lemma가 되는 것이다!!
+	- Proof of Lemma using Pigeon hole
+		- state의 개수가 n개인 DFA에서 p = n+1로 하자. 
+		- state transition sequence를 생각해보면 비둘기 집의 원리에 의하여 n+1이상인 state가 있으므로 같은 state가 존재한다. 해당 state를 q, 시작 state를 p, 마지막 state를 f라고 하자.
+		- p~q까지의 input을 x, q~q까지의 input을 y, q~f까지의 input을 z로 하면 해당 Lemma가 성립한다. 
+	- 증명에서 알 수 있듯이 p는 해당 language를 표현한 DFA의 state 개수이다. 
+	- 또한 Regular language이면 해당 Lemma를 만족하는 것이고 역은 반례가 존재하므로 주의하여야 한다. 

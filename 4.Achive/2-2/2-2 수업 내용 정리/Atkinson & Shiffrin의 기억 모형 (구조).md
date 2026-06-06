@@ -1,0 +1,14 @@
+- Atkinson & Shiffrin의 기억 모형의 구조
+	- Sensory memory
+		- Unattended information is lost
+		- 부호화 과정에 가까움
+	- Short-term memory
+		- Unrehearsed information is lost
+	- Long-term memory
+		- Some information may be lost over time
+	- Transitions
+		- Sensory input to Sensory memory (Start)
+		- Sensory memory to Short-term memory: Attention
+		- Short-term memory to Short-term memory: Maintenance rehearsal
+		- Short-term memory to Long-term memory: Encoding
+		- Long-term memory to Short-term memory: Retrieval

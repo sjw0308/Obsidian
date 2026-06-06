@@ -1,0 +1,167 @@
+- Processors do only one thing
+	- Processor(CPU)는 단순히 sequence of instructions를 한번에 하나씩 읽고 실행한다. 
+	- 해당 실행 순서를 CPU의 control flow
+- 지금까지의 control flow를 바꾸는 요소들
+	- Jumps and branches 
+	- Call and return
+	- 하지만 이는 충분하지 않고, System은 Exceptional control flow를 필요로 한다
+
+- Exceptional control flow mechanisms
+	- Low level
+		- Exceptions
+			- Control-flow change in response to a system event(i.e. system state change)
+			- Implemented using combination of hardware and OS software
+	- High level
+		- Process context switch
+			- Implemented by OS software and hardware timer
+		- Signal
+			- Implemented by OS software
+		- Nonlocal jumps (__setjmp()__ and __longjmp()__)
+			- Implemented by C runtime library
+
+- Exception
+	- An exception requires a transfer of control to the OS kernel in response to a specific event
+	- OS kernel: 컴퓨터 system에서 hardware를 편하게 사용할 수 있도록 만들어둔 base system software. OS는 너무 커서 memory와 disk에 나누어져 있는데 이중 kernel은 memory에 있다. 
+	- 실행순서
+		- User instructions 실행 중 Event발생
+		- Exception을 통해 kernel code로 이동
+		- Kernel에서 exception handler를 통해서 exception을 processing
+		- Kernel이 event가 발생한 instruction 다시 실행 / 다음 instruction 실행 / 프로그램 종료 중 하나의 결과를 return해줌
+	- Exception table
+		- Data structure to point the handling routine for each type of event
+		- Each type of event has a unique number as its ID set by either CPU or OS
+		- Handler is called each time exception occurs
+	- Exception control flow의 분류학
+		- Asynchronous
+			- Interrupts
+		- Synchronous
+			- Traps, Faults, Aborts
+	- Asynchronous exception
+		- Interrupt
+			- Caused by events external to the processor
+			- Indicated by setting the processor's interrupt pin
+			- Handler returns to the next instruction
+			- Examples: Timer interrupt, I/O interrupt from external devices(Ctrl-C)
+	- Synchronous Exception
+		- 프로그램 실행 중 instruction에 의해 발생하는 exception
+		- Trap
+			- Intentional
+			- Returns control to the next instruction
+			- Examples: system call, breakpoint traps
+		- Faults
+			- Unintentional but possibly recoverable
+			- Either re-executes faulting(i.e. current) instruction or aborts
+			- Examples: page faults (recoverable), protection faults (unrecoverable)
+		- Aborts
+			- Unintentional and unrecoverable
+			- Aborts current program
+			- Examples: parity error, machine check
+
+- Process
+	- An instance of running program
+	- Process provides each program with two key abstractions
+		- Logical control flow
+			- Each program seems to have exclusive use of the CPU (registers)
+			- Provided by kernel mechanism called context switching
+		- Private address space
+			- Each program seems to have exclusive use of main memory
+			- Provided by kernel mechanism called virtual memory
+	- Multiprocessing
+		- Computer runs many processes simultaneously
+			- Applications for one or more users (e.g. web browsers, email clients, etc.)
+			- Background tasks (e.g. monitoring network, I/O devices, etc.)
+		- Single processor executes multiple process concurrently
+			- Process executions interleaved (multitasking)
+			- Address spaces managed by virtual memory system
+			- Register values for nonexecuting processes saved in memory
+		- Multicore processors
+			- Multiple CPUs on single chip
+			- Share main memory (and some of the caches)
+			- Each can execute a separate process, kernel schedules processors onto cores
+	- Context Switching
+		- Processes are managed by a shared chunk of OS code called kernel
+			- The kernel is not a separate process, but rather runs as part of some user process
+		- Control flow passes from one process to another via context switching
+		- ![[SmartSelect_20231208_184458_Flexcil.jpg]]
+
+- Process Control
+	- System Call Error Handling
+		- On error, Linux system-level functions typically return -1 and set global variable `errno` to indicate cause
+		- Hard and fast rule
+			- Must check the return status of every system-level function 
+			- Only exception is the handful of functions that return void
+		- Can simplify somewhat using an error-reporting function, `unix_error`
+	- Obtaining Process IDs
+		- `pid_t getpid(void)`: returns PID of current process
+		- `pid_t getppid(void)`: returns PID of parent process
+	- Creating and Terminating Process
+		- From a programmer's perspective, a process is in one of three states
+		- Running
+			- The process is either executing or waiting to be executed (and will eventually be scheduled (i.e. chosen to execute) by the kernel)
+		- Stopped
+			- The process execution is suspended and will not be scheduled until further notice
+		- Terminated
+			- The process is stopped permanently
+	- Terminating Processes
+		- Process becomes terminated for one of three reasons
+			- Receiving a signal whose default action is to terminate
+			- Returning from the `main` routine
+			- Calling the `exit` function
+				- `void exit(int status)`: terminate with an exit status of `status`, exit is called once but never returns
+	- Creating Processes
+		- Parent process creates a new running child process by calling `fork`
+		- `int fork (void)`
+			- Returns 0 to the child process and child's PID to parent process
+			- Child is almost identical to parent
+				- Child gets an identical copy of the parent's virtual address space
+				- Child gets identical copies of the parent's open file descriptor
+				- Child has a different PID that the parent
+			- `fork` is called once but returns twice
+		- Make `fork` More Nondeterministic
+			- Problem
+				- Linux scheduler does not create much run-to-run variance
+				- Hides potential race conditions in nondeterministic programs
+			- Solution
+				- Create custom version of library routine that inserts random delays along different branches 
+				- Use runtime interpositioning to have program use special version of library code
+		- Make `fork` with Process Graphs
+			- Process Graph
+				- a useful tool to capture the partial ordering of statements in a concurrent program
+				- Each vertex is the execution of a statement
+				- $a\rightarrow b$ means a happens before b
+				- Edges can be labeled with current value of variables
+				- `printf` vertices can be labeled with output
+				- Each graph begins with a vertex with no inward edge
+			- Any topological sort of the graph corresponds to a feasible total ordering
+	- Reaping Child Processes
+		- Idea 
+			- When process terminates it still consumes system resources (e.g. exit status, various OS tables)
+			- Called a zombie
+		- Reaping
+			- Performed by parent on terminated child (using `wait` or `waitpid`)
+			- Parent is given exit status information
+			- Kernel then deletes zombie child process
+		- What if parent does not reap
+			- If any parent terminates without reaping a child, then the orphaned child(고아) will be reaped by `init` process (`pid == 1`)
+			- So, only need explicit reaping in long-running processes
+		- `int wait(int *child_status)`
+			- Suspends current process until one of its children terminates
+			- Implemented as syscall
+			- Return value is the PID of the terminated child process
+			- If `child_status != NULL`, then the integer it points to will be set to a value that indicates reason the child terminated and the exit status
+		- `pid_t waitpid(pid_t pid, int &status, int options)`
+			- Suspends current process until specific process terminates
+			- Various options
+		- `int execve(char *filename, char *argv[], char *envp[])`
+			- Loads and runs in the current process
+				- Executable file `filename`
+					- Object file or script file beginning with #!interpreter (e.g. #!/bin/bash)
+				- Argument list `argv`
+					- By convention `argv[0] == filename`
+				- Environment variable list `envp`
+					- _name = value_ strings (e.g. `USER=jspark`)
+					- `getenv`: 현재 environment를 사용, `putenv`, `printenv`
+			- Called once and never returns
+			- Except if there is an error
+			- Overwrites code, data, and stack
+				- Retains PID, open files and signal context

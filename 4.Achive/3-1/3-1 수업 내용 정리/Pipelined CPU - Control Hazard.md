@@ -1,0 +1,39 @@
+- Control Dependence
+	- All instructions are dependent by control flow 
+	- Every instruction uses and sets the PC
+	- In other words, control dependence is data dependence on the PC
+- PC Hazard Analysis
+	- ![[SmartSelect_20240407_221620_Flexcil.jpg]]
+	- All instructions read and modify PC
+	- PC hazard distance is at least 1
+
+- Predicting Next PC as PC+4
+	- Typically, Only ~20% of the instruction mix is control flow
+	- Out of the control flow instructions
+		- ~50% of "forward" control flow is taken
+		- ~90% of "backward" control flow is taken
+	- Expect "nextPC = PC + 4" ~84% of the time, but what happens for the remaining 14%?
+
+- Control Speculation
+	- ![[SmartSelect_20240407_225611_Flexcil.jpg]]
+	- ![[SmartSelect_20240407_225637_Flexcil.jpg]]
+- Pipeline Flush on Misprediction
+	- Flush: to discard instruction in a pipeline, usually due to an unexpected event
+	- Bubble -> Set Control values to 0
+		- Why is this sufficient? Control에 memory write available 등이 있기 때문에 충분함 
+- Performance Impact
+	- Correct guess $\rightarrow$ No penalty
+	- Incorrect guess $\rightarrow$ 3 bubbles
+	- Example
+		- 20%의 control flow instruction, 70%가 taken
+		- IPC = 1/\[1+(0.2\*0.7)\*3] $\approx$ 0.7
+
+- Reducing Misprediction Penalty
+	- Forwarding after EX stage
+		- ![[SmartSelect_20240408_164202_Flexcil.jpg]]
+	- Forwarding at EX stage
+		- ![[SmartSelect_20240408_164341_Flexcil.jpg]]
+- Final PC Hazard Analysis
+	- ![[SmartSelect_20240408_170356_Flexcil.jpg]]
+- 추가) Final Data Hazard Analysis
+	- ![[SmartSelect_20240408_181634_Flexcil.jpg]]

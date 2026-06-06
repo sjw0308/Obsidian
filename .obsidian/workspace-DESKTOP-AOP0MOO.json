@@ -1,0 +1,239 @@
+{
+  "main": {
+    "id": "889e036720bbd3cb",
+    "type": "split",
+    "children": [
+      {
+        "id": "471205dbdcf5d0f5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b008bf0cffbbf37a",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "9c9edab7c183f166",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "resource/2-2/2-2 수업 내용 정리/컴SW 기말.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d9a549cc4a694e65",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Optimization.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c73a1d16dddf8b34",
+    "type": "split",
+    "children": [
+      {
+        "id": "fd54a97a0fbe1e79",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9de67882f97d1049",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "custom"
+              }
+            }
+          },
+          {
+            "id": "0a677bb16d4368d4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f6b1f5c22aef705f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "1ca0d2e41c0b16a7",
+            "type": "leaf",
+            "state": {
+              "type": "mk-file-view",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4a59304b37960381",
+    "type": "split",
+    "children": [
+      {
+        "id": "c197100c6b71e438",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f99ac7395bfbf883",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Optimization.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "aa31c0746385e187",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Optimization.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6ff758b796c02317",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "60eaa0aa61af4077",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Optimization.md"
+              }
+            }
+          },
+          {
+            "id": "e8003855b4b1aa47",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-full-calendar:Open Full Calendar": false,
+      "obsidian42-brat:BRAT": false
+    }
+  },
+  "active": "d9a549cc4a694e65",
+  "lastOpenFiles": [
+    "resource/2-2/2-2 수업 내용 정리/컴SW 기말.md",
+    "Optimization.md",
+    "resource/2-2/컴퓨터SW시스템개론.md",
+    "main.md",
+    "resource/2-2/정치학특강-민주주의의 문제.md",
+    "정치학특강 서평과제.md",
+    "project/과제/2-2 12월 과제목록.md",
+    "project/과제/2023-12-09.md",
+    "project/과제/2023-12-04.md",
+    "resource/2-2/2-2 수업 내용 정리/Exceptional Control Flow - Exceptions and Processes.md",
+    "resource/2-2/2-2 수업 내용 정리/Exceptional Control Flow - Signals.md",
+    "resource/2-2/2-2 수업 내용 정리/SmartSelect_20231208_184458_Flexcil.jpg",
+    "resource/2-2/2-2 수업 내용 정리/Turing Machine.md",
+    "project/2-2 기말고사 일정.md",
+    "project/2-2 중간고사 일정.md",
+    "resource/2-2/(드랍)데이터분석 입문.md",
+    "resource/2-2/오토마타 및 형식언어.md",
+    "resource/2-2/2-2 수업 내용 정리/오토마타 기말.md",
+    "project/과제/컴SW lab4.md",
+    "resource/2-2/2-2 수업 내용 정리/Properties of CFL.md",
+    "resource/2-2/2-2 수업 내용 정리/Cache Memory.md",
+    "resource/2-2/2-2 수업 내용 정리/Pushdown Automata.md",
+    "resource/2-2/2-2 수업 내용 정리/Context-Free Grammar.md",
+    "resource/2-2/2-2 수업 내용 정리/오토마타 중간.md",
+    "resource/2-2/2-2 수업 내용 정리/Atkinson & Shiffrin의 기억 모형 (구조).md",
+    "resource/2-2/심리학.md",
+    "resource/2-2/2-2 수업 내용 정리/심리학 2차 시험.md",
+    "resource/2-2/2-2 수업 내용 정리/SmartSelect_20231115_020417_Flexcil.jpg",
+    "resource/2-2/2-2 수업 내용 정리/SmartSelect_20231113_212915_Flexcil 1.jpg",
+    "resource/2-2/2-2 수업 내용 정리/SmartSelect_20231113_212822_Flexcil.jpg",
+    "resource/2-2/2-2 수업 내용 정리/SmartSelect_20231113_212915_Flexcil.jpg",
+    "resource/2-2/2-2 수업 내용 정리/SmartSelect_20231113_205319_Flexcil.jpg",
+    "resource/2-2/2-2 수업 내용 정리/SmartSelect_20231113_205308_Flexcil.jpg",
+    "resource/2-2/2-2 수업 내용 정리/SmartSelect_20231113_205255_Flexcil.jpg",
+    "resource/2-2/2-2 수업 내용 정리/SmartSelect_20231113_205214_Flexcil.jpg",
+    "resource/2-2/2-2 수업 내용 정리/SmartSelect_20231113_185357_Flexcil.jpg",
+    "resource/Pokemon",
+    "선천/ 후천 논쟁(Nature",
+    "선천",
+    "area of responsiability/MasterPlan of Undergraduate",
+    "무제 파일.canvas",
+    "achive/2-2",
+    "area of responsiability/가계부",
+    "project/과제",
+    "Context/spacesLastSync.log",
+    "Context"
+  ]
+}

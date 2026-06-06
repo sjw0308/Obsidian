@@ -1,0 +1,253 @@
+{
+  "main": {
+    "id": "889e036720bbd3cb",
+    "type": "split",
+    "children": [
+      {
+        "id": "0ad1192ff788bf49",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "271bc7a02c732ecb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3.resource/2-3/이머징 사회이슈와 데이터 분석.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "13c7b8ac967a2ad6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3.resource/2-3/2-3 수업 내용 정리/발표 준비 - 이머징 사회이슈와 데이터 분석.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e964d2cd8483fb0f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3.resource/2-3/2-3 수업 내용 정리/청년들의 결혼과 출산에 대한 태도와 특징 정리.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "289c102dd319d3b6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "434910e9b9cd717a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "청년들의 결혼과 출산에 대한 태도와 특징 추가 조사.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c73a1d16dddf8b34",
+    "type": "split",
+    "children": [
+      {
+        "id": "fd54a97a0fbe1e79",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9de67882f97d1049",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0a677bb16d4368d4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f6b1f5c22aef705f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "4a59304b37960381",
+    "type": "split",
+    "children": [
+      {
+        "id": "c197100c6b71e438",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f99ac7395bfbf883",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "3.resource/2-3/2-3 수업 내용 정리/청년들의 결혼과 출산에 대한 태도와 특징 정리.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "aa31c0746385e187",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "3.resource/2-3/2-3 수업 내용 정리/청년들의 결혼과 출산에 대한 태도와 특징 정리.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6ff758b796c02317",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "60eaa0aa61af4077",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "3.resource/2-3/2-3 수업 내용 정리/청년들의 결혼과 출산에 대한 태도와 특징 정리.md"
+              }
+            }
+          },
+          {
+            "id": "e8003855b4b1aa47",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "markdown-importer:마크다운 형식 가져오기 열기": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "e964d2cd8483fb0f",
+  "lastOpenFiles": [
+    "청년들의 결혼과 출산에 대한 태도와 특징 추가 조사.md",
+    "chart158001_1Img.png",
+    "3.resource/2-3/2-3 수업 내용 정리/청년들의 결혼과 출산에 대한 태도와 특징 정리.md",
+    "3.resource/2-3/2-3 수업 내용 정리/발표 준비 - 이머징 사회이슈와 데이터 분석.md",
+    "Pasted image 20240307145827.png",
+    "3.resource/2-3/2-3 수업 내용 정리/Pasted image 20240307134908.png",
+    "3.resource/2-3/2-3 수업 내용 정리/Pasted image 20240307145526.png",
+    "3.resource/2-3/2-3 수업 내용 정리/Pasted image 20240307145512.png",
+    "3.resource/2-3/2-3 수업 내용 정리/Pasted image 20240307145211.png",
+    "3.resource/2-3/2-3 수업 내용 정리/Pasted image 20240307144718.png",
+    "3.resource/2-3/2-3 수업 내용 정리/Pasted image 20240307144515.png",
+    "3.resource/2-3/2-3 수업 내용 정리/Pasted image 20240307143420.png",
+    "3.resource/2-3/2-3 수업 내용 정리/Pasted image 20240307143056.png",
+    "3.resource/2-3/이머징 사회이슈와 데이터 분석.md",
+    "3.resource/2-3/2-3 수업 내용 정리",
+    "achive/무제 파일.md",
+    "1.project/과제/2024-03-02 과제 목록.md",
+    "main.md",
+    "무제 파일.md",
+    "무제 폴더",
+    "무제 파일.canvas",
+    "3.resource/2-3/컴퓨터구조.md",
+    "4.achive/2-2/2-2 수업 내용 정리/컴SW 기말.md",
+    "3.resource/2-3/심리학 특강 - 뇌와 나의 세계.md",
+    "3.resource/2-3/프로그래밍 스튜디오.md",
+    "3.resource/2-3/프로그래밍과 문제해결.md",
+    "3.resource/2-3/알고리즘.md",
+    "resource/2-3/Untitled",
+    "3.resource/2-3",
+    "resource/Untitled.md",
+    "4.achive/2-2/2-2 수업 내용 정리/2-2 12월 과제목록.md",
+    "achive/2-2/2-2 수업 내용 정리/2-1 수업 내용 정리.md",
+    "4.achive/2-2/2-2 기말고사 일정.md",
+    "4.achive/2-2/2-2 중간고사 일정.md",
+    "2.area of responsiability/MasterPlan of Undergraduate/3-1.md",
+    "2.area of responsiability/MasterPlan of Undergraduate/2-2.md",
+    "2.area of responsiability/MasterPlan of Undergraduate/3-2.md",
+    "2.area of responsiability/MasterPlan of Undergraduate/4-1.md",
+    "2.area of responsiability/MasterPlan of Undergraduate/4-2.md",
+    "4.achive/2-2/2-2 수업 내용 정리/오토마타 기말.md",
+    "3.resource/Pokemon",
+    "선천/ 후천 논쟁(Nature",
+    "선천",
+    "2.area of responsiability/MasterPlan of Undergraduate",
+    "4.achive/2-2",
+    "2.area of responsiability/가계부"
+  ]
+}

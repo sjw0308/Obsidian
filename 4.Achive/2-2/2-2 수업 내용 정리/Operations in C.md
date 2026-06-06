@@ -1,0 +1,13 @@
+- Bit-level operations(각 Bit별로 비교하여 연산을 적용)
+	- ~: Bitwise not
+	- &: Bitwise and
+	- |: Bitwise or
+	- ^: Bitwise xor
+- Logic operations (전체 수에 연산을 적용하여 결과가 1또는 0으로 나타남)
+	- !: Logical not
+	- &&: Logical and
+	- ||: Logical or
+- Shift Operations (특정 값 만큼 bit를 옮김)
+	- <<: Left shift. x<<y라면 x의 bit을 y만큼 이동시키라는 의미이다. 
+	- >>: Right shift
+	- Arithmetic shift versus Logical shift: Arithmetic shift는 Right shift를 할 때 MSB가 1이면 shift한 공간을 1로, MSB가 0이면 0으로 shift하는 방법이고, Logical shift는 MSB와 상관 없이 해당 공간을 0으로 채우는 방법이다. 

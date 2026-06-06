@@ -1,0 +1,123 @@
+- Decidable/Semi-decidable/Undecidable
+	- Given language L
+	- if there is some TM that accepts every string in L and rejects every string not in L, then L is a decidable or recursive language
+	- if there is some Turing machine that accepts every string in L and either rejects or loops on every string not in L, then L is semi-decidable or recursively enumerable
+	- if L is not decidable, then L is called undecidable
+- Recursively Enumerable Languages
+	- Def. A language L is said to be recursively enumerable if a TM exists that accepts L, i.e. a TM exists such that for $w \in L,\ q_0w\vdash^* x_1q_fx_2$ for some $q_f\in F$ and $x_1x_2\in \Gamma^*$
+- Recursive Language
+	- Def. A language L is said to be recursive (decidable) if a TM exist s that accepts L and that always halts, regardless of whether or not it accepts
+	- Theorem. If L is a recursive language, so is $\bar{L}$
+		- Proof. L = L(M)인 TM M에 대하여 $\bar{M}$을 다음과 같이 만들자
+		- M을 복사한 후 모든 accepting state를 non-accepting state로 바꾼다. 
+		- 새로운 accepting state r을 만들고, M이 halts without accepting이었던 state, tape symbol pair를 모두 r로 transition 하도록 만든다.
+		- $L(\bar{M}) = \bar{L}$이다. 
+- Why is Semi-decidable called Recursively enumerable?
+	- Def. An enumerator for a language $L\subset\Sigma^*$ is a TM that writes on it output tape $\#x_1\#x_2\#x_3\#\dots$ and $L=\{x_1, x_2, x_3, \dots\}$
+	- Theorem. A language is Semi-decidable if and only if some enumerator enumerates it. 
+		- Proof. 
+		- ![[SmartSelect_20231219_021702_Flexcil.jpg]]
+
+- How to encoding TMs
+	- We shall restrict ourselves to TM's with input alphabet {0, 1}
+	- Assign positive integers to the three classes of elements involved in moves
+		- States: $q_1$ (start state), $q_2$  (final state), $q_3$, ...
+		- Symbols: $X_1$ (0), $X_2$ (1), $X_3$ (blank), $X_4$, ...
+		- Directions: $D_1$ (L) and $D_2$ (R)
+	- Suppose $\delta(q_i, X_i) = (q_k, X_l, D_m)$
+		- Represent this rule by string $0^i10^j10^k10^l10^m$ 
+		- Key point: since integers i, j, ... are all > 0, there cannot be two consecutive 1's in these strings
+		- Represent a TM by concatenating the codes for each of its moves, separated by 11 as punctuation ($Code_111Code_211Code_311\dots$)
+
+- Finite set and Infinite set
+	- Finite set
+		- A set has a particular integer that is the count of the number of members
+	- Infinite set
+		- A set for which there is a 1-1 correspondence between itself and a proper subset of itself
+	- Countable set
+		- A set with a 1-1 correspondence with the positive integer set
+
+- Cantor's Diagonalization Method
+	- Theorem. Let S be an infinite countable set. Then its power set $2^S$ is not countable
+	- Proof by contradiction. A countable set S에 대하여 각 원소에 번호를 매긴다. ($s_i$)
+	- 어떤 subset $t_i$에 대하여 $if\ s_i \in t_i$ 여부를 0(포함되지 않음), 1(포함됨)로 표시하여 하나의 무한한 matrix를 만든다
+	- 해당 matrix의 diagonal과 반대되는 (0이면 포함하고 1이면 포함 안하는) set을 생각하면 해당 set은 S의 subset이지만 $t_i$에 포함되지 않는다. 따라서 power set is not countable.
+- Diagonalization Language $L_d$
+	- Let $M_i$ be the _i_ th TM whose code is $t_i$ (note that $L(M_i) = \phi\ if\ t_i$ fails to be a valid TM code) Write down a matrix where 
+		- $T_{i, j} = 1\ (if\ w_j\in L(M_i))\ or\ 0\ (otherwise)$
+	- TM 한 개는 code로써 자연수 하나에 대응된다. (Countable)
+	- The diagonalization language
+		- $L_d = \{w_i\ |w_i\notin L(M_i)\}$ 
+	- $L_d$ is not recursively enumerable that is, there is no TM that accepts $L_d$
+	- Proof.
+		- A direct consequence of Cantor's diagonalization method
+		- Assume that there is a TM for $L_d$ , it must be $M_i$ for some i
+			- If $w_i \in L_d$ then $w_i \in L(M_i)$ but $w_i \notin L_d$ from the definition of $L_d$ 
+			- If $w_i \notin L_d$ then $w_i \notin L(M_i)$ but $w_i \in L_d$ 
+- Universal Turing Machine
+	- A Turing machine that can simulate an arbitrary Turing machine on arbitrary input
+	- A universal TM, $M_u$ , is an automaton that given the description of any TM M and a string w, can simulate the computation of M on w
+	- Consists of three tapes
+		- tape 1: description of M. Encoded definition of M, along with the string w: Code for M111w
+		- tape 2: tape of M
+		- tape 3: state of M with head of M
+	- How $M_u$ works
+		- $M_u$ looks first at the contents of tape 2 and tape 3 to determine the configuration of M
+		- $M_u$ consults tape 1 to see what M would do in this configuration
+		- Tape 2 and tape 3 will be modified to reflect the result of the move
+	- The universal language, $L_u$ , is defined as a set of binary strings that encode a pair (M, w) where M is a TM with the binary input alphabet and w is a string in $\{0,1\}^*$, such that w is in L(M)
+	- Recursively enumerable, but not recursive language
+		- It means that the Halting problem is not decidable
+		- Proof. 
+			- We designed a TM for $L_u$ , so it is surely recursively enumerable
+			- Suppose it were recursive; that is , we could design a UTM U that always halted
+			- If so, we could also design an algorithm for $L_d$ 
+				- Given input w, we can decide if it is in $L_d$ by the following steps
+					- Check that w is a valid TM code. If not, its language is empty, so w is in $L_d$
+					- If valid, use the hypothetical algorithm to decide whether w111w is in $L_u$
+					- If so, then w is not in $L_d$ ; else it is
+			- But we already know there is no algorithm for $L_d$
+			- Thus, our assumption that there was an algorithm for $L_u$ is wrong
+			- $L_u$ is recursively enumerable, but not recursive
+
+- Rice's Theorem 
+	- Properties of Languages
+		- Any set of languages is a property of languages 
+	- We focus on properties of recursively enumerable languages because we can't represent other languages by TM's
+		- property $\rightarrow$ problem about TM
+		- Let $L_p$ be the set of binary TM codes for TM's M such that L(M) has property P
+	- There are two trivial properties for which $L_p$ is decidable
+		- The always-false property, which contains no recursively enumerable languages
+		- The always-true property, which contains every recursively enumerable language
+	- Rice's Theorem
+		- For every other property P except for the two trivial ones, $L_p$ is undecidable
+- Reductions 
+	- A problem $P_1$ reduces to $P_2$ if we have an algorithm to convert instances of a problem $P_1$ to instances of a problem $P_2$ that have the same answer
+	- It is not essential that every instance of $P_2$ be the target of one or more instance of $P_1$. It is common that only a small fraction of $P_2$ is a target of the reduction
+	- A reduction from $P_1$ to $P_2$ is a TM that takes an instance of $P_1$ written on its tape and halts with an instance of $P_2$ on its tape
+	- If there is a reduction from $P_1$ to $P_2$ , then
+		- If $P_1$ is undecidable then so is $P_2$
+		- If $P_1$ is non-RE, then so is $P_2$
+- Proof of Rice's Theorem
+	- For every nontrivial property P of the recursively enumerable languages, $L_p$ is undecidable (Rice's Theorem)
+	- Reduce $L_u$ to $L_p$ ; Since $L_u$ is undecidable, $L_p$ is also undecidable
+		- The reduction algorithm must take M and w and produce  a TM M'
+		- L(M') has property P if and only if M accepts w
+		- M' has two tapes, used for
+			- Simulates another TM $M_L$ on the input M'
+			- Simulates M on w
+	- ![[SmartSelect_20231219_040431_Flexcil.jpg]]
+	- Design of M'
+		- Simulate M on w on the first tape 
+		- If M accepts w, simulate $M_L$ on the input x to M' that appears initially on the second tape
+		- M' accepts its input x if and only if $M_L$ accepts x
+	- Proof
+		- Case 1: Suppose M accepts w
+			- M' simulates $M_L$ and therefore accepts x if and only if x is in L
+			- That is, L(M') = L, L(M') has property P, and M' is in $L_p$
+		- Case 2: Suppose M does not accept w
+			- M' never starts the simulation of $M_L$ , and never accepts its input x
+			- Thus, $L(M') = \phi$, and L(M') does not have property P
+			- That is M' is not in $L_p$
+		- The algorithm that converts M and w to M' is a reduction of $L_u$ to $L_p$
+		- Thus $L_p$ is undecidable

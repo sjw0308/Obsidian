@@ -1,0 +1,7 @@
+/* Task Notes 캘린더 전체적인 폰트 및 높이 조절 예시 */
+.tasknotes-calendar-view {
+    font-size: 1.1rem !important; /* 글자 크기 확대 */
+}
+.tasknotes-calendar-cell {
+    min-height: 80px !important; /* 날짜 칸 높이 강제 확대 */
+}

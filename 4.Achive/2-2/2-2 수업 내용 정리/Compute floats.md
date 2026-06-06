@@ -1,0 +1,14 @@
+- Compute floats
+	- Basic: 우선 해당 operation을 이용하여 정확한 값을 구한 후 위의 Round to Even을 이용하여  f에 맞게 rounding한다. 
+	- $x +_f y = Round(x+y)$, $x \times _f y = Round(x\times y)$ 
+- Multiplication
+	- $\{ (-1)^{s1} \times M1 \times 2^{E1}\} \times \{ (-1)^{s2} \times M2 \times 2^{E2}\} = (-1)^{s} \times M \times 2^{E}$
+	- Sign: $s = s1 \wedge s2$
+	- Significand: $M = M1 \times M2$
+	- Exponent: $E = E1 + E2$ 
+	- 필요한 조정: $M\geq2$ 이면 M을 shift right 후 E에 1을 더한다. E가 out-of-range이면 overflow(underflow). M을 rounding하여 precision에 맞춘다.
+- Addition
+	- $\{ (-1)^{s1} \times M1 \times 2^{E1}\} + \{ (-1)^{s2} \times M2 \times 2^{E2}\}$ 
+	- E1 > E2라면 E = E1으로 맞춘다.
+	- 정확한 값을 구한 후 조정 과정을 거친다.
+	- 필요한 조정: M을 check한 후 2 이상이거나 1 미만이면 조정한다. E의 overflow(underflow)를 확인한다. M을 rounding한다. 

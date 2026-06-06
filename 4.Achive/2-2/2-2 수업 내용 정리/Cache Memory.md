@@ -1,0 +1,73 @@
+- Principle of Locality
+	- Programs tend to use data and instructions with addresses near or equal to those they have used recently
+	- Temporal Locality
+		- Recently referenced items are likely to be referenced again in the near future
+		- 자기 자신의 locality
+	- Spatial Locality
+		- Items with nearby addresses tend to be referenced close together in time
+		- 근처 items의 locality
+
+- General Cache Concepts
+	- Cache
+		- Memory에 비하여 더 작고, 빠르고 더 비싼 Memory Blocks의 subset
+		- Main Memory에서 일부 data를 block단위로 copy하여 가지고 있다. 
+	- Hit
+		- Request된 block이 cache에 있을 경우 Hit이라고 한다. 
+		- 이때 cache내의 해당 block을 return해준다. 
+	- Miss
+		- Request된 block이 cache에 없을 경우 Miss라고 한다. 
+		- 이때 해당 block을 cache가 다음 단계의 memory(e.g. main memory, 더 큰 수준의 cache)에 request하여 가져와서 저장한다. 
+		- Placement policy
+			- Determines where block goes to save in cache
+		- Replacement policy
+			- Determines which block gets evicted from the cache
+			- e.g. Replace Least Recently Used (LRU), ...
+		- Types of miss
+			- Compulsory miss(Cold miss)
+				- Occur because any cache starts empty: the first reference to the block
+				- Cache는 전원이 없어지면 data가 남아있다고 보장할 수 없기 때문에 모든 cache는 처음 불렸을 때 cold miss를 낸다
+			- Capacity miss
+				- Occurs when the set of active cache blocks (working set) is larger than the cache
+				- Cache는 비싸고 작은 memory이기 때문에 working set보다 작을 수 있다. 
+			- Conflict miss
+				- Occurs when the level-k cache is large enough, but multiple data objects all map to the same level-k block
+				- Cache를 사용하는 방법으로 main memory의 특정구역들을 cache의 특정 구역으로 mapping시켜 효율을 늘린다. 이때 같은 block에 mapping된 data들을 번갈아 request하게 되면 해당 구역에 지속적으로 replacement가 일어나면서 miss가 생기게 된다. 
+
+- How Cache construct
+	- Cache와의 data 이동과 다른 연산들은 parallel하게 수행될 수 있도록 optimize되어 있다. 
+	- Cache 및 Register file (in CPU)은 Bus Interface(Arbiter)를 통해서 I/O Bridge (in Mother board)로 이어져 있고, 해당 I/O Bridge 에서 Main Memory (DRAM)로 Memory Bus가 이어져 있다. 
+
+- General Cache Organization
+	- Cache size $C = S\times E\times B$
+		- _S_: The number of sets in cache
+		- _E_: The number of lines per set
+			- line은 Cache에 들어오는 data의 최소 단위로 Block이라고 생각해도 된다. 
+			- E에 따라서 해당 Cache를 E-way cache라고 부른다.
+		- _B_: Cache line size
+	- Line(or block)
+		- $v + tag + B(=2^b)$
+		- _v_: Valid Bit. 초기화(전원을 킨) 이후에 다시 쓰인 값인가?
+		- _tag_: 다음 level에서 어떤 주소를 갖는 데이터인가? Cache내에서 block의 identifier로써 작용한다. 
+		- $B(=2^b)$ bytes per cache block (the data)
+	- Read (five steps)
+		- Locate the set (choose set num)
+		- Check if any line exists in the set
+		- Check if the tag matches
+		- Check the valid bit
+		- Locate data starting at the offset
+	- Address of Word
+		- _t_ bits + _s_ bits + _b_ bits
+		- _t_ bits: Tag. 주소정보를 가진 부분
+		- _s_ bits: Set Index
+		- _b_ bits: Block offset. 해당 tag를 가진 line의 data 내에서 몇 번째 byte인지
+		- 순서는 바뀔 수 있음
+	- Write
+		- Write-hit handling
+			- Write-through: Write the data immediately to memory
+			- Write-back: Defer write to memory until replacement of line
+				- Need a dirty bit to mark whether the line is different from memory or not
+		- Write-miss handling
+			- Write-allocate: Load into cache and update line in cache
+				- Good if more writes to the location follow
+			- No-write-allocation: Writhe immediately to memory
+		- Typically: \[write-through + no-write-allocation] or \[write-back + write-allocation]

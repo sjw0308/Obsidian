@@ -1,0 +1,9 @@
+- Rounding (Round to Even방법)
+	- $M = 1.B\dots BBB\textbf{GR}xxxxx$ 이때 G는 Frac에 표현되는 LSB에 들어가는 수이다. R은 Frac에 포함되지 않고 지워지는 수에서 MSB를 의미한다. xxxxxx부분을 모두 OR연산하여 S로 표현하고 sticky bits라고 칭한다. 
+	- R = 0: remaining bits를 모두 제거한다. 
+	- R=1, S=1: G에 1을 더한다. (increase)
+	- R=1, S=0: G가 1이면 increase하고, 0이면 discard한다. (Round to even)
+- Other Roundings
+	- Toward to zero: Rounding한 값이 0에 가까워 지도록 rounding
+	- Toward to down: 내림
+	- Toward to up: 올림

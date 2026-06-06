@@ -1,0 +1,2 @@
+- x86-64의 register는 %rax, %rbx, %rsp, %rbp, %r8~15 등 16개가 있다. 이 registers의 기본적인 크기는 8bytes(64bits)이다. 
+- %rax의 low-order 4bytes = %eax, %eax의 low-order 2bytes = %ax, %ax의 higher byte와 lower byte는 각각 %ah, %al로 나뉜다. 

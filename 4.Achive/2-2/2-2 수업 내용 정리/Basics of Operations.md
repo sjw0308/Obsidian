@@ -1,0 +1,18 @@
+- Operand Types
+	- Immediate(constant integer): e.g. $0x400. C언어의 상수와 같지만 앞에 $를 붙여준다. 1,2 또는 4bytes로 encoded된다. 
+	- Register: e.g. %rax. 몇몇 special perpose를 가지고 있는 registers는 잘 사용하지 않는다(program counter의 역할을 하는 %rip, stack pointer의 역할을 하는 %rsp 등)
+	- Memory: 8개의 연속적인 bytes로 표현되거나 register들을 통해서 표현된다. 
+- Memory addressing modes
+	- $D(Rb, Ri, S) = Mem[Reg [Rb] + S \times Reg[Ri] + D]$ 
+	- D: Displacement. 상수이다. 1,2 또는 4bytes
+	- Rb: Base register. any of 16 integer registers
+	- Ri: Index register. any, except %rsp
+	- S: Scale. 1,2,4 or 8bytes. 가져오려는 Data type에 맞게 index를 설정하기 쉽도록 만들어둔 장치
+
+- Basic Operators
+	- mov(q) src, dst: Data를 src에서 dst로 옮긴다. src는 Immediate, Register, Memory가 가능하고, dest는 Register, Memory가 가능하다. 그러나 Memory to Memory transfer는 지원하지 않는다. 
+	- lea(q) src, dst: Load effective address의 약자이다. mov와 비슷하지만 memory access가 없이 register의 값만 옮겨준다. memory addressing mode를 이용하여 reg의 배수를 다른 reg에 저장 할 수 있다. e.g. leaq (%rdi, %rdi, 2), %rax -> %rax = 3*%rdi
+	- add, sub, imul, sal, sar, shr, xor, and, or (q) src, dst: +, -, \*, <<, >>(arithmetic), >>(logical), ^, &, |
+	- inc, dec, neg, not (q) dst: ++, --, -, ~
+- Operation suffixes
+	- b = byte, w = short(2byte), l = int(4bytes), q = long(8bytes)

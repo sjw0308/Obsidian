@@ -1,0 +1,30 @@
+{
+  "settings": {
+    "migrated": 2,
+    "iconPacksPath": ".obsidian/plugins/obsidian-icon-folder/icons",
+    "fontSize": 16,
+    "emojiStyle": "none",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "RiHome2Fill",
+      "RiFileList2Fill",
+      "RiSlideshow2Fill",
+      "RiShieldFill",
+      "RiArchiveFill"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": true
+  },
+  "main.md": "RiHome2Fill",
+  "1.project": "RiSlideshow2Fill",
+  "4.achive": "RiArchiveFill",
+  "2.area of responsiability": "RiShieldFill",
+  "3.resource": "RiFileList2Fill"
+}

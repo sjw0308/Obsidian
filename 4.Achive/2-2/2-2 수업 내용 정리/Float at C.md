@@ -1,0 +1,4 @@
+- type casting 
+	-  $double/float \rightarrow int$일 때 rounding toward zero와 비슷하게 rounding된다. Nan이나 out of range는 정의 되지 않으나 보통 T_min으로 세팅된다. 
+	- $int \rightarrow double$일 때 exact conversion이 일어난다. 
+	- $int \rightarrow float$일 때 rounding모드에 따라서 rounding이 일어날 수 있다. 

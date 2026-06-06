@@ -1,0 +1,28 @@
+- Forgetting관련
+	- 일시성(Transience)
+		- 기억을 저장하는 동안 정보가 소멸하는 것
+		- 순행간섭(Proactive interference): 초기에 학습했던 것들이 나중에 습득된 정보들에 대한 기억을 손상
+		- 역행간섭(Retroactive interference): 나중에 학습한 것들이 이전에 습득했던 정보에 대한 기억을 손상
+	- 차단(Blocking/Retrieval failure)
+		- 산출해내려고 노력하지만 기억에 있는 정보를 인출하는데 실패하는 것
+		- 노화와 함께 빈번하게 발생
+	- 방심(Absentmindedness/Encoding failure)
+		- 주의의 감소로 인해 기억의 부호화와 저장에 실패하는 것
+		- 계획했던 행동들을 수행하는 것을 망각 $\Rightarrow$ 미래기억(prospective memory)
+- Remembering관련
+	- 집착(Persistence)
+		- 잊고 싶어하는 사건에 대한 반복적이며 원하지 않는 회상
+- Distortion관련
+	- 기억오귀인(Misattribution)
+		- 원천오귀인(Source misattribution): 언제, 어디서, 어떻게, 무엇을 했는지에 대하여 잘못된 출처를 할당하는 오류
+		- 수면자효과(Sleeper effect): 설득자의 신화성을 낮음에 대한 기억과 설득내용의 기억이 시간이 지남에 따라 설득의 효과가 높아지는 것
+		- 잠복기억(Cryptomnesia): 억압되거나 잊힌 기억이 새로운 경험이라는 착각 속에 재현하는 현상
+	- 편향(Bias)
+		- 경험의 회상에서 현재의 지식, 신념 및 감정이 왜곡된 영향을 끼치는 것
+		- 지속적 편향(Consistency bias): 기억 속의 상태는 현재의 생각과 유사하다고 봄
+		- 변화 편향(Change bias): 변화가 있다고 믿는 경우 실제와 다른 기억을 함
+		- 자기중심 편향(Egocentric bias): 동일한 사건에 대한 다른 사람의 기억보다 나의 기억을 더 신뢰하는 것
+		- 고정관념 편향(Stereotypic bias): 개인의 고정관념에 맞추어 기억하는 것
+		- Von Restorff effect: 일반적이지 않은 사건 또는 자극일 수록 더 잘 기억되지만 정확하게 기억되지 못함
+	- 암시성(Suggestibility)
+		- 외부 출처에서 온 잘못된 정보들을 통합하여 기억으로 판단하는 경향

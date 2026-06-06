@@ -1,0 +1,93 @@
+- Major problem of Pipeline CPU
+	- No independent operations
+		- Remove dependency and/or busy resources
+
+- Data dependence
+	- True dependence (In this Topic)
+		- Read after Write (RAW)
+		- Example
+			- $r_3 \leftarrow r_1\ op\ r_2$
+			- $r_5 \leftarrow r_3\ op\ r_4$
+		- 위 예시에서 $r_3$의 결과가 직후 다시 사용됨
+		- 첫 instruction WB전에 두번째 instruction의 ID, EX가 진행될 수 없다
+	- Anti dependence (Later)
+		- Write after Read (WAR)
+		- Example
+			- $r_3 \leftarrow r_1\ op\ r_2$
+			- $r_1 \leftarrow r_4\ op\ r_5$
+		- 위 예시에서 첫번째와 두번째 instruction의 $r_1$
+	- Output dependence (Later)
+		- Write after Write (WAW)
+		- Example
+			- $r_3 \leftarrow r_1\ op\ r_2$
+			- $r_5 \leftarrow r_3\ op\ r_2$
+			- $r_3 \leftarrow r_6\ op\ r_7$
+		- 위 예시에서 첫번째와 세번째 instruction의 $r_3$
+
+- RAW Dependency and Hazard
+	- RAW dependencies lead to hazards in the 5-stage pipeline
+	- 5-stage pipeline이 IF, ID, EX, MEM, WB라고 하자. 첫 instruction이 이후에 나오는 instruction들에 true dependent하다고 하면, 첫 instruction의 WB이후에 나머지 instruction들의 ID이후가 진행될 수 있기 때문에 ID와 WB간의 distance가 Data Hazard와 연관되어 있다. 
+- Data Hazard의 조건
+	- 각 instruction 타입에 따라 Register file에 접근하는 단계를 보면 아래 표와 같다. 
+	- ![[SmartSelect_20240330_223415_Flexcil.jpg]]
+	- 이때 두 instruction이 RAW가 일어난다면 한 instruction에서 write RF가 일어나고 이후의 instruction에서 read RF가 일어나야 한다. 
+	- write RF가 일어나는 instruction번호를 i, write RF가 일어나는 stage를 X라고 하자
+	- read RF가 일어나는 instruction번호를 j, read RF가 일어나는  stage를 Y라고 하자
+	- 그러면 RAW로 Data Hazard가 발생하기 위해선 dist(i, j) < dist(X, Y)여야 한다. 
+	- 만약 dist(i, j) $\ge$ dist(X, Y) 라면 Data Hazard가 발생하지 않는다. 
+
+- Pipeline Stall
+	- Data Hazard의 해결법 중 하나
+	- Data Hazard가 발생하지 않을 때 까지 bubble을 만들어서 두 instruction사이를 강제로 비워 넓히는 방법이다. 
+	- dist(i, j)가 커지면서 Data Hazard가 발생하지 않게 된다. 
+	- How to Stall?
+		- Stall: make the younger instruction wait until the hazard is resolved
+			- 1. Stop all up-stream stages
+			- 2. Drain all down-stream stages
+		- Disable PC and IR latching
+		- Control should set $RegWrite_{ID} = 0$ and $MemWrite_{ID} = 0$
+	- When to Stall?
+		- 조건
+			- 1. young instruction (R/I, LW, SW, Bxx, JALR) reads a register written by old instruction (R/I, LW, JAL, JALR)
+			- 2. dist(old instruction, young instruction) < dist(ID, WB) = 3
+			- 다른말로...we must stall young instruction in ID stage if it wants to read a register to be written by ALL old instruction that might exist in EX, MEM or WB stage
+		- Stall Condition
+			- Helper functions use_rs1(I) returns true if (I use rs1) && (rs1 !=x0)
+			- Stall when
+				- $(rs1_{ID} = rd_{EX})\ \&\&\ use\_rs1(IR_{ID})\ \&\&\ RegWrite_{EX}$
+				- $(rs1_{ID} = rd_{MEM})\ \&\&\ use\_rs1(IR_{ID})\ \&\&\ RegWrite_{MEM}$
+				- $(rs2_{ID} = rd_{EX})\ \&\&\ use\_rs2(IR_{ID})\ \&\&\ RegWrite_{EX}$
+				- $(rs2_{ID} = rd_{MEM})\ \&\&\ use\_rs2(IR_{ID})\ \&\&\ RegWrite_{MEM}$
+	- Impact of Stall on Performance
+		- Without Stall
+			- Ideal IPC = 1
+		- With Stall
+			- Each stall cycle correspond to 1 lost cycle
+			- For a program with N instructions and S stall cycles
+			- $Average\ IPC_{WithStall} = N/(N+S)$
+			- 초기 instruction을 실행하는데 필요한 시간을 고려하지 않은 approximate 값
+		- S depends on 
+			- Frequency of RAW hazards
+			- Exact distance between the hazard-causing instructions
+			- Overlap between hazards
+
+- Data Forwarding (=Register Bypassing)
+	- I1과 I2사이에서 RAW Data hazard가 발생했다고 했을 때, I1의 EX가 실행된 이후 EX/MEM(또는 MEM/WB) register의 값을 다음 I2의 EX에서 ALU의 input으로 바로 보내주는 방법
+	- Forwarding Paths
+	- ![[SmartSelect_20240330_233323_Flexcil.jpg]]
+	- Forwarding Logic
+		- if $(rs1_{EX}\ != x0)\ \&\&\ (rs1_{EX}==rd_{MEM})\ \&\&\ RegWrite_{MEM}$ 
+			- then forward operand from MEM stage (dist(i, j) = 1)
+		- if $(rs1_{EX}\ != x0)\ \&\&\ (rs1_{EX}==rd_{WB})\ \&\&\ RegWrite_{WB}$
+			- then forward operand from WB stage (dist(i, j) = 2)
+		- else 
+			- use the operand from register file
+		- Do the same for rs2
+	- About Load instruction
+		- Load instruction의 경우 MEM stage가 끝나야 register의 값을 얻을 수 있기 때문에 dist(i, j) = 1인 instruction과 RAW Data hazard가 나면 하나의 bubble이 필요하다!
+	- Data Hazard Analysis for Data Forwarding
+		- ![[SmartSelect_20240330_234153_Flexcil.jpg]]
+		- Stall = $\{[(rs1_{ID} == rd_{EX})\ \&\&\ use\_rs1(IR_{ID})]\ ||\ [(rs2_{ID} == rd_{EX})\ \&\&\ use\_rs2(IR_{ID})]\}\ \&\&\ MemRead_{EX}$
+		- Stall을 피하려면 assembly코드 짤 때 load와 register 사용이 붙어있지 않도록 해야한다. 
+	- Data forwarding implementation
+		- ![[SmartSelect_20240330_235042_Flexcil.jpg]]

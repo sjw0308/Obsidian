@@ -1,0 +1,32 @@
+- Condition bits란
+	- Single bit registers로 연산 이후 여러 상태를 표시해주는 역할을 한다. 
+	- 모든 arithmetic instruction이후에 세팅된다.  e.g. addq src, dst. lea연산 등에서는 setting되지 않는다. 
+
+- Condition bits의 종류
+	- CF: Carry Flag, MSB에서 carry또는 borrow가 일어날 경우 1
+	- SF: Sign Flag, sign bit가 1인 경우 1
+	- ZF: Zero Flag, 연산 결과가 0인 경우
+	- OF: Overflow Flag, src, dst를 signed로 간주하고 연산할 때 overflow가 발생한 경우 1
+	- 등등..
+
+- cmp와 test instruction
+	- cmp b, a: (a-b)연산을 하는 것 같은 효과로 condition bits만 세팅하고 연산 결과를 저장하지 않는다. 
+		- CF: MSB에서 carry/borrow가 있을 때 1
+		- ZF: (a-b) == 0
+		- SF: (a-b) < 0 (as signed)
+		- OF: (a>0 && b<0 && (a-b)<0) || (a<0 && b>0 && (a-b)>0)
+	- test b, a: (a&&b)연산을 하는 것 같은 효과로 condition bits만 세팅하고 연산 결과를 저장하지 않는다. 
+		- ZF: (a&&b) == 0 (a == b이면 a가 0인지 확인하는 효과)
+		- SF: (a&&b) < 0 (MSB가 1)
+		- CF, OF clear
+- setX instructions
+	- setX dst: dst의 LSB를 X에 따라서 1또는 0으로 세팅한다. 
+		- sete: ZF
+		- setne: ~ZF
+		- 등등..
+
+- mov(a)(b)(c) instruction
+	- 작은 크기의 src에서 더 큰 크기의 dst로 data를 옮길 때 dst의 남은 부분을 처리하는 방식을 정하는 mov의 형태
+	- (a): z또는 s가 가능하다. z는 남은 bit을 모두 0으로 초기화한다. s는 남은 bit을 모두 남겨둔다. 
+	- (b): src의 크기
+	- (c): dst의 크기

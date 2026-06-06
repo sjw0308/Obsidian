@@ -1,0 +1,55 @@
+- Finite Automata
+	- Computing machines with a finite number of states
+	- Finite automata are a useful model for many important kinds of software and hardware
+	- State(circle in diagram), input and state transition(arc in diagram)
+	- Language of Automaton: The set of strings accepted by an automaton A is the language of A, L(A)
+	- Types of Finite Automata
+		- Deterministic Finite Automata(DFA): On each input, the automaton moves from its current state to one and only one state
+		- Non-deterministic Finite Automata(NFA): On each input, the automaton can move from its current state to several state at once.
+	- Finite Automata는 input string이 끝났을 때 automaton이 final state에 있으면 해당 string을 accept하고 아니면 reject한다. 
+
+- DFA
+	- 어떤 input string에 대하여 unique한 연산 절차를 거친다
+	- DFA = $(Q,\ \Sigma, \ \delta,\ \ q_0,\ \ F)$ 
+		- $Q$: A finite set of states
+		- $\Sigma$: An input alphabet
+		- $\delta$: A transition function such that $Q\times \Sigma \rightarrow Q$ 
+		- $q_0$: A start state such that $q_0 \in Q$ 
+		- F: A set of final states such that $F \subseteq Q$ 
+	- Transition function $\delta$
+		- It takes two arguments: A state, An input symbol
+		- $\delta (q, a) :=$ the state that the DFA goes to when it is in state q and input a is received 
+		- 원래는 a가 input symbol, 즉 alphabet 중 하나이지만 string이 들엉는 경우 해당 transition function을 extended로 생각하고, input sequence로 판단한다. 
+- Regular Language
+	- A language L is regular if and only if ther exists a DFA M such that $L = L(M)$ 
+	- 정의에 따라 우리가 어떤 language가 regular임을 증명하기 위해서는 해당 language에 맞는 DFA가 존재함을 보이면 된다. 
+- NFA
+	- 어떤 input string에 대하여 여러가지 state가 동시에 존재할 수 있다. 
+	- NFA = $(Q,\ \Sigma,\ \delta,\ \ q_0,\ \ F )$
+		- $Q,\ \Sigma, \ \ q_0,\ \ F$는 DFA와 같음
+		- $\delta$ 는 의미는 같지만 함수의 정의역과 공역이 다음과 같음 $Q\times (\Sigma \cup \{ \epsilon \} ) \rightarrow 2^Q$ 로 input symbol이외에 $\epsilon$을 받을 수 있으며, 함수의 output으로 set of states를 반환한다.
+	- $\epsilon$-transition($\delta (q, \epsilon)$): input symbol없이 진행되는 transition으로 해당 state에 도착하면 바로 해당 transition을 시도한다. 
+	- DFA와 달리 $\delta (q_i, a)$가 empty일 수 있다. 
+	- Language of NFA: $L(M) = \{w\in \Sigma^* | \hat{\delta}(q_0, w)\cap F \ne \phi \}$
+- Equivalence of two finite automata
+	- 두 finite automata의 language가 같으면 둘을 equivalence하다고 한다. 
+- Equivalence of DFA and NFA
+	- For any NFA $M_N$ there exists a DFA $M_D$ such that $L(M_N) = L(M_D)$ and vice versa
+	- Proof 1(DFA $\rightarrow$ NFA): if $\delta_D(q,a) = p$, let the NFA have $\delta_N(q,a)=\{p\}$ 
+	- Subset construction
+		- given an NFA $M_N = (Q_N, \Sigma, \delta_N, q_0, F_N)$ construct an equivalent DFA, $M_D = (Q_D, \Sigma, \delta_D, \{q_0\}, F_D)$ 
+		- $Q_D = \{S|S\subseteq Q_N\}$, 이때 $|Q_D| = 2^{|Q_N|}$ 으로 유한하다. DFA의 state가 NFA의 state의 set임에 집중해야 한다. 
+		- $F_D = \{S\subseteq Q_N|S\cap F_N \ne \phi\}$
+		- For every $S\subseteq Q_N$ and $a\in \Sigma$, $\delta_D(S, a) = \bigcup_{q\in S}\delta_N(q,a)$. e.g. $\delta_D(\{q_1, \dots, q_k\}, a)$ is the union over all $i = 1, \dots, k \ \ of\ \delta_N(q_i, a)$
+		- 해당 경우는 $\epsilon$-transition을 고려하지 않았지만 있는 경우 또한 상관 없다. 
+	- Proof 2(NFA $\rightarrow$ DFA): using subset construction
+		- 증명을 위해서 $|w|$에 대하여 $\delta_N(q_0, w) = \delta_D(\{q_0\}, w)$에 대한 induction을 활용할 것이다. 
+		- Basis $w= \epsilon$ : $\epsilon$-transition이 없기 때문에 $\delta_N(q_0, \epsilon) = \delta_D(\{q_0\}, \epsilon) = \{q_0\}$이다
+		- Induction
+			- Assume IH for strings shorter than w, Let w = xa
+			- Let $\delta_N(q_0, x) = \delta_D(\{q_0\}, x) = S$
+			- Let T = the union of $\delta_N(p, a)$ over all states p in S
+			- Then, $\delta_N(q_0, w) = \delta_D(\{q_0\}, w) = T$. Q.E.D
+- $\epsilon$-closure
+	- $\epsilon$-closure of state q: CL(q)
+	- NFA에서 $\epsilon$-transition만을 거쳐서 갈 수 있는 state의 set. 자기자신(q)를 포함한다

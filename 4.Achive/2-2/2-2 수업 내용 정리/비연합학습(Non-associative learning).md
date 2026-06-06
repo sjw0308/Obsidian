@@ -1,0 +1,14 @@
+- 학습
+	- 학습자의 상태에 비교적 영속적인 변화를 유발하는 새 지식, 기술 또는 반응을 경험으로부터 획득하는 것
+	- 경험, 변화, 영속적
+- 학습의 종류
+	- 비연합(Non-associative learning)
+	- 연합(associative)
+	- 관찰(observational)
+
+- 비연합(Non-associative learning)
+	- 외부세계의 자극(감각)에 대한 학습
+	- 습관화(Habituation)
+		- 자극에 대한 반복된 노출이 반응의 감소를 가져오는 경우
+	- 민감화(Sensitization)
+		- 자극에 대한 반응이 증가하는 경우

@@ -1,0 +1,37 @@
+- Pushdown Automata
+	- An __NFA__ with a stack
+	- Equivalent to the CFG in the language-defining power
+	- Transition of PDA
+		- Consumes an input symbol
+		- Goes to a new state (or stay in the old)
+		- Replaces the top of the stack by stack variables(popping and pushing)
+
+- Nondeterministic PDA 
+	- M = $(Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$
+		- Q: The finite set of states
+		- $\Sigma$: Finite set of input symbols (input alphabet)
+		- $\Gamma$: Finite set of stack symbols
+		- $\delta$: $Q\times(\Sigma\cup\{\epsilon\})\times\Gamma\rightarrow$ all finite subsets of $Q\times\Gamma^*$ (transition function)
+		- $q_0\in Q$: The start state
+		- $Z_0\in\Gamma$: The stack start symbol (Stack의 baseline으로 작용한다)
+		- $F\subseteq Q$: The set of final or accepting states
+	- Transition function
+		- $\delta(q,a,X)$
+			- q is a state in Q
+			- a is an input symbol in $\Sigma \cup \{\epsilon\}$ 
+			- X is a stack symbol in $\Gamma$ ($\epsilon$이 없음에 주의 하자)
+		- The output of $\delta$: a finite set of pairs $(p,\gamma)$ where...
+			- p is the new state
+			- $\gamma$ is the string of stack symbols that replace X ($\gamma = YZ\dots$일 때 가장 왼쪽의 stack variable이 stack의 top이 되도록 오른쪽부터 stack에 push한다)
+	- __Notion__ 
+		- $\delta$에서 같은 input에 대하여 어러가지 상황으로 갈라지면 우주가 갈라지는 것! $\rightarrow$ 서로 갈라진 두 상황이 서로 stack을 공유하지 않고 각자의 stack이 있는 우주인 것이다
+
+- Instantaneous Descriptions (ID's)
+	- A PDA goes from configuration to configuration when consuming input. To reason about PDA computation, we use instantaneous descriptions of the PDA
+	- An ID is a triple $(q, w, \gamma)$
+		- q is the state
+		- w is the remaining input
+		- $\gamma$ is the stack contents, top at the left
+	- To say that ID I can become ID J in one move of the PDA, we write $I\vdash J$
+		- If $\delta(q,a,X)$ contains (p, Y), $(q, aw, X\alpha)\vdash (p, w, Y\alpha)$ for any w and $\alpha$ 
+		- $\vdash^*$ denotes zeros or more moves of the PDA (the closure of $\vdash$)

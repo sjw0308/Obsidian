@@ -1,0 +1,65 @@
+- Goals of Compiler-Level Optimization
+	- Minimize the number of instructions
+		- Avoid calculations more than once
+		- Avoid unnecessary calculations at all
+		- Avoid slow instructions (e.g. multiplication, division)
+	- Minimize memory-access latency
+		- Keep everything in registers whenever possible
+		- Access memory in cache-friendly patterns
+		- Load data from memory early, and only once
+	- Minimize branching
+		- Avoid unnecessary decisions at all
+		- Make it easier for the CPU to predict branch destinations
+		- Unroll loops to spread cost of branches over more instructions
+- Limitations of Compiler-Level Optimization
+	- Generally cannot improve algorithmic complexity
+		- Only constant factors (but their benefits can be 10 times or even more)
+	- Must guarantee no change from the original program behavior
+		- Programmer may not care about edge-case behavior, but compiler cannot know it
+		- Exception: language may declare some changes acceptable
+	- Often only analyze one function at a time
+		- Costly whole-program analysis (e.g. Link-Time Opt.)
+		- Exception: inlining to merge many functions into one
+	- Tricky to anticipate run-time inputs
+		- Profile-guided optimization can help with common case, but worst-case performance can be important as well
+		- Especially for code exposed to malicious input (e.g. network servers)
+- Two Kinds of Optimizations
+	- Local optimizations work inside a single basic block
+		- Constant folding(constant 계산식을 미리 계산), strength reduction(더 계산하기 쉬운 operation 사용), dead code elimination
+	- Global optimizations process the entire control flow graph of a function
+		- Loop transformations, code motion(반복문 안에 있을 필요 없는 것을 밖으로 빼냄)
+
+- Limitations of Optimizing Compiler
+	- Operate under fundamental constraint
+		- Must not cause any change in program behavior
+		- Often prevents it from making optimizations that would only affect behavior under pathological conditions
+	- Obvious behavior to the programmer can be obfuscated to the machine
+		- By languages and coding style
+	- Most analysis is performed only within procedures (함수단위로 optimization)
+		- Whole-program analysis is too expensive in most cases
+		- Newer version of GCC do interprocedural analysis within individual files
+	- Most analysis is based only on static information
+		- Compiler has difficulty anticipating run-time inputs
+
+- Optimization Blocker
+	- Procedure Calls
+		- Why could compiler not move `strlen` out of inner loop
+			- Procedure may have side effects
+			- Function may not return the same value for given arguments
+		- Compiler treats procedure call as a black box
+		- remedies
+			- Use of inline functions
+			- Do your own code motion
+	- Memory aliasing
+		- Aliasing: two different memory references specify single location
+		- Easy to happen in C
+		- Get in habit of introducing local variable
+
+- Exploiting Instruction - Level Parallelism
+	- Needs general understanding of modern processor design
+		- Hardware can execute multiple instruction in parallel (pipeline, superscalar)
+	- Performance limited by data dependencies
+	- Simple transformations can yield dramatic performance improvement
+
+- Cycles Per Element (CPE)
+	- Useful to express the performance of program operating on vectors or lists

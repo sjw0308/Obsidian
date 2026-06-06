@@ -1,0 +1,8 @@
+- 절대역(Absolute Treshold)
+	- 어떤 자극을 겨우 탐지하는데 필요한 최소한의 자극강도
+	- 이때 겨우는 50%확률 정도로 느끼는 것
+- 차이역(Difference Treshold)또는 최소가지차이(Just noticeable difference, JND)
+	- 겨우 탐지될 수 있는 자극의 속성 변화
+	- 베버의 법칙(Weber's law)
+		- 모든 감각 영역에 대하여 넓은 범위의 강도가 걸쳐서 겨우 탐지가능한 자극의 변화는 표준 자극에 대해 일정한 비율을 갖는다. 
+		- $\frac{\Delta I}{I} = K\ (constant)$  

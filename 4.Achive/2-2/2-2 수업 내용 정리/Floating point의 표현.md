@@ -1,0 +1,23 @@
+- IEEE floating point standard
+	- 해당 표준은 float을 sign, exp, frac부분으로 나누어 저장한다. 
+	- single precision: 1:8:23 total 32bits, double precision: 1:11:52 total 64bits 
+	- bit상 표현되는 값들을 Exp, Frac으로 표현하고 실제 값 $v = (-1)^s \times M \times 2^E$로 표현한다. 
+
+- Normalized Values
+	- when $Exp \ne 00\dots0 \ or\ Exp \ne 11\dots1$ 
+	- E = Exp-Bias
+	- $Bias = 2^{k-1} -1$, k는 Exp를 나타내는 bit의 수
+	- single precision: Exp(1 ~ 254) map to E(-126 ~ 127)
+	- double precision: Exp(1 ~ 2046) map to E(-1022 ~ 1023)
+	- M=1.Frac (이때 1은 encoding하지 않는다)
+	- $M_{min} = 1.0$ when $Frac = 00\dots0$, $M_{max} = 2.0 - \epsilon$ when $Frac = 11\dots1$ 
+- Denormalized Values
+	- when $Exp = 00\dots0$ 
+	- E = 1-Bias
+	- $Bias = 2^{k-1} -1$, k는 Exp를 나타내는 bit의 수 
+	- M=0.Frac
+	- Frac = 0일 때 +0과 -0이 모두 존재할 수 있고 이는 어디서부터 온 0인지 표시하기 위함이다.
+- Others
+	- when $Exp = 11\dots1$
+	- if $Frac = 00\dots0$: $\pm\infty$를 나타낸다. e.g. 1.0/0.0
+	- if $Frac = 11\dots1$: Not-a-Number(NaN)을 의미한다. e.g. sqrt(-1), $\infty - \infty$, $\infty \times 0$ 

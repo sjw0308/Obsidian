@@ -1,0 +1,14 @@
+- 신호탐지이론(Signal Detection Theory)
+	- 개인의 지각적 민감도를 측정하는 분석적 방법
+		- 자극에 대한 감각적 증거의 강도
+		- 결정 준거 - 그 자극이 출현했다고 지각 시스템이 결정하는데 필요한 증거의 양
+	- Stimulus - Response의 종류
+		- HIt - Stimulus가 주어졌고, 이에 대하여 Response가 있었음
+		- Miss - Stimulus가 주어졌지만, 이에 대하여 Response가 없었음
+		- False alarm - Stimulus가 주어지지 않았지만, Response가 있었음
+		- Correct rejection - Stimulus가 주어지지 않았고, Response도 없었음
+	- 어떤 개인이...
+		- Hit과 False alarm이 적고, Miss, Correct rejection이 많았다. $\rightarrow$ response bias가 strict하다. (결정준거가 높다)
+
+- 감각순응
+	- 유기체가 현재의 조건에 순응하면서 지속되는 자극에 대한 민감성은 시간에 걸쳐 쇠퇴하는 경향을 보임

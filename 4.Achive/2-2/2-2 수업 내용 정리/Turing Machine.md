@@ -1,0 +1,64 @@
+- Structure
+	- State 및 head position을 지정하는 Machine 부분 + Tape
+	- State를 short-term memory, Tape을 long-term memory로 생각할 수 있다. 
+	- input은 tape을 통해서 주어진다. 
+	- Action (based on the state and the tape symbol under the head)
+		1. Change state
+		2. rewrite the symbol
+		3. move the head one square
+- TM
+	- $M = (Q, \Sigma, \Gamma, \delta, q_0, \sqcup, F)$
+		- $Q$: the set of internal states
+		- $\Sigma$: the input alphabet ($\Sigma \subseteq \Gamma - \{\sqcup\}$)
+		- $\Gamma$: the tape alphabet ($\Gamma-\Sigma-\{\sqcup\}$ called markers)
+		- $\delta$: $Q\times\Gamma\rightarrow Q\times\Gamma\times\{L, R\}$, the transition function
+		- $q_0\in Q$: the start state (initial state)
+		- $\sqcup$: blank symbol (in tape)
+		- $F\subseteq Q$: the set of final or accepting states
+	- Transition function tastes two arguments
+		- A state in _Q_
+		- A tape symbol in $\Gamma$
+	- $\delta(q, Z)$ is either undefined or a triple of the form $(p, Y, D)$
+		- _p_ is a state
+		- _Y_ is the new tape symbol
+		- _D_ is a direction, L(eft) or R(ight)
+- Halt
+	- A TM is said to be halt whenever it reaches a configuration for which is not defined
+	- __We assume that no transitions are defined for any final state__
+	- Unfortunately it is not always possible to require that a TM halts even if it does not accept
+	- TMs that always halt exist for an problem then the problem is decidable
+- ID(Instantaneous Descriptions) of a TM
+	- $\alpha q \beta \vdash \alpha' p \beta'$
+	- $\alpha, \beta$는 blank symbol을 포함하지 않는 tape의 symbol들이다. _q, p_ 는 state이다
+	- state의 바로 오른쪽에 있는 symbol이 head의 위치에 있는 symbol이다
+	- $\vdash^*$은 multi-step을 의미한다
+	- 양쪽 끝에 있는 blank는 보통 표기하지 않는다
+- Language of a TM
+	- L(M) = {$w\in\Sigma^*|\ q_0w\vdash^*x_1q_fx_2\ for\ some\ q_f\in F,\ x_1x_2\in\Gamma^*$}
+	- When $w\notin L(M)$
+		- The machine halt in a non-final state
+		- It can enter an infinite loop and never halt: $q_0w\vdash^* \infty$ 
+	- Language by Final state
+		- L(M) = {$w|q_0w\vdash^* I,\ where\ I\ is\ an\ ID\ with\ a\ final\ state$}
+		- 위에서 했던 내용들
+	- Language by Halting
+		- H(M) = {$w|q_0w\vdash^* I,\ and\ there\ is\ no\ move\ possible\ from\ ID\ I$}
+	- If L = L(M), then there is a TM M' such that L = H(M')
+		- Introduce a new state s, that is $\delta(s, X) = (s, X, R)$ for all symbols X
+		- If q is not a final state and $\delta(q,X)$ is halting, let $\delta(q, X) = (s, X, R)$
+	- If L = H(M), then there is a TM M'' such that L = L(M'')
+		- Introduce a new state f, the only final state of M''
+		- If $\delta(q, X)$ is halting, define it by $\delta(q, X) = (f, X, R)$
+- TM as Transducers
+	- For a function f defined by $\hat{w} = f(w)$
+	- We can make TM as Transducers for the function that providing $q_0w\vdash^*_M q_f\hat{w}$ 
+	- Turing Computable
+		- A function f with domain D is said to be Turing-computable or just computable if some TM M exist such that $q_0w\vdash^*_M q_ff(w)$, $q_f \in F$ for $\forall w\in D$ 
+- Variations of TMs
+	- TM with Stay Option
+	- TM with Multiple Tracks
+	- TM with Semi-Infinite Tape
+	- TM with Multiple Tapes
+	- Nondeterministic TM
+	- Etc ...
+	- Each class of those TMs is equivalent to the class of the standard TMs

@@ -1,0 +1,17 @@
+- Automata theory
+	- The study of abstract computing machines or models of computation. 추상적인 machine에 대한 내용이므로 물리적 구성 요소와 관계가 없다. 
+
+- Alphabet($\Sigma$)
+	- A finite, nonempty set of symbols
+- String
+	- A finite sequence of symbols chosen from some alphabet
+	- Empty string($\epsilon$): The string with zero occurrences of symbols
+	- Length of string($|w|$): The number of positions for symbols in the string
+	- Powers of an alphabet($\Sigma ^k$): The set of string of length k, each of whose symbols is in $\Sigma$
+	- $\Sigma ^*$ the set of all strings over $\Sigma$
+	- Concatenation of strings: $w=a_1a_2\dots a_n,\ \ v = b_1b_2\dots b_m \ \ then \ \ wv = a_1a_2 \dots a_nb_1b_2\dots b_m$. 
+- Language
+	- A set of strings all of which are chosen from some $\Sigma ^*$, given an alphabet $\Sigma$
+	- Empty language($\phi$): A language over any alphabet. $\phi = \{ \},\ \ \phi \ne \{ \epsilon \}$
+- (Decision) Problem
+	- Questions of deciding whether a given string is a member of a particular language

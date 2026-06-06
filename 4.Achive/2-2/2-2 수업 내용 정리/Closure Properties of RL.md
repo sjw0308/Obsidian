@@ -1,0 +1,30 @@
+- RL은 Union, Concatenation, star-closure에 대하여 닫혀있다. 
+	- Proof: RE가 존재하므로...
+- RL은 Complementation에 대하여 닫혀있다
+	- Proof: DFA = (Q, ..., F)를 잡고, final state만 Q-F로 다른 DFA를 설정하면 해당 DFA가 complementation을 의미하는 DFA가 된다. 
+- RL은 Intersection에 대하여 닫혀있다.
+	- Proof: Product DFA를 만들어서 둘 모두 final인 state의 묶음을 final state로 잡으면 해당 DFA가 Intersection을 의미하는 DFA가 된다. 
+- RL은 Difference에 대하여 닫혀있다. 
+	- Proof: Difference는 complementation과의 intersection이기 때문이다. 
+- RL은 Reversal에 대하여 닫혀있다. 
+	- Proof: DFA에서 transition, start/final반대로 하면 해당 DFA가 reversal을 의미하는 DFA가 된다. 
+	- $E$가 $a\ \ symbol$, $\epsilon$, $\phi$라면 $E^R = E$
+	- $E = F + G$라면 $E^R = F^R + G^R$
+	- $E = FG$라면 $E^R = G^RF^R$
+	- $E = F^*$라면 $E^R = (F^R)^*$
+
+- Homomorphism
+	- A homomorphism on an alphabet is a function that gives a string for each symbol in that alphabet
+	- Suppose $\Sigma$ and $\Gamma$ are alphabets. Then a function $h:\Sigma\rightarrow\Gamma^*$ is called a homomorphism.
+		- If $w = a_1a_2\dots a_n$ then $h(w) = h(a_1)h(a_2)\dots h(a_n)$
+		- If L is language on $\Sigma$ then its homomorphic image is defined as $h(L) = \{h(w)|w\in L\}$ 
+- RL은 Homomorphism에 대하여 닫혀있다. 
+	- Apply h to each symbol in E(RE of RL L) then resulting RE is h(L)
+
+- Inverse homomorphism
+	- Let h be a homomorphism and L a language whose alphabet is the output language of h. Then Inverse homomorphism is $h^{-1}(L) = \{w|h(w)\ \ is \ \ in \ \ L\}$ 
+	- $h^{-1}(h(L)) = L$은 보장할 수 없다. 
+- Extended homomorphism
+	- $h:\Sigma^*\rightarrow\Gamma^*$ 
+- RL은 Inverse homomorphism에 대하여 닫혀있다. 
+	- Proof: DFA에서 alphabet에 h를 적용시킨 Image를 alphabet으로 갖는 DFA를 만든다.

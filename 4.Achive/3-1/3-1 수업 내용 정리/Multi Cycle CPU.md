@@ -1,0 +1,67 @@
+- Single Cycle CPU의 단점과 Multi Cycle CPU
+	- Single Cycle CPU는 한 instruction 실행 중 Clock이 변하면 안된다.
+	- 따라서 clock이 가장 긴 instruction 기준으로 설정되기 때문에 비효율적이다.
+	- 또한 한 instruction을 한 clock에 진행하려고 하니 clock frequency가 매우 낮아질 수 밖에 없다. 
+	- 또 다른 단점으로는 ALU가 존재하지만 Adder를 추가적으로 사용해야만 한다는 단점이 있다. 
+	- Multi Cycle CPU
+		- 이러한 단점들을 보안하기 위하여 clock frequency를 높히고, 각 instruction type에 맞게 필요한 만큼의 clock 수를 사용하도록 한다.
+		- Multi cycle에 instruction을 분할하였기 때문에 ALU하나로 PC와 관련된 계산을 하고, instruction memory와 data memory를 분할할 필요가 없다. 
+- PVSWriteEn signal
+	- Programmer Visible State를 변경할 때 사용하는 signal
+	- 해당 signal이 1인 경우에만 PVS를 변경할 수 있다
+	- 해당 signal은 instruction의 마지막 cycle에만 1이 되어서 PVS를 update할 수 있도록 한다. 
+	- 그 이유는 프로그래머가 내부의 과정을 알 필요도 없고 알면 안되기 때문이다. 
+
+- Implementation of Multi Cycle CPU
+	- without Control
+	- ![[SmartSelect_20240329_222108_Flexcil.jpg]]
+	- with control unit
+	- ![[SmartSelect_20240329_222148_Flexcil.jpg]]
+	- Controls
+		- ALUSrcA - 0이면 ALU input 1에 PC를 넣고, 1이면 ALU input 1에 Read register 1을 넣는다. 
+		- ALUSrcB\[1:0] - Read register 2, 4, Imm값 중에서 하나를 선택하는 신호이다. 
+		- IorD - 0이면 memory의 input을 PC로 하여 Instruction memory에 접근하고, 1이면 memory의 input을 ALUOut으로 하여 Data memory에 접근한다. 
+		- IRWrite - IF단계에서 1로 만들어서 새로운 instruction을 받는다. 
+		- PCSource - 0이면 지금 ALU에서 계산 된 값 (ex PC + Imm) 을 next PC로 하고, 1이면 ALUOut의 값 (ex PC + 4)를 next PC로 한다. 
+		- PCWrite - Instruction의 마지막 clock에서 1로 만들어서 PC를 업데이트 한다. 
+		- PCWriteNotCond - branch instruction에서 1이 되어서 branch의 결과에 따라 next PC를 업데이트 할 수 있도록 한다. 
+		- RegWrite - Instruction의 마지막 clock에서 1로 만들어서 Register file을 업데이트 한다. 
+		- MemRead - IF에서 instruction을 읽어올 때와 Load instruction의 MEM 단계에서 Data memory를 읽어올 때만 1이 된다. 
+		- MemWrite - Store instruction의 MEM 단계에서 Data memory의 값을 변경할 때만 1이 된다. 
+		- MemtoReg - Load instruction일 때만 1이 된다. 
+
+- Register Transfer
+	- Multi Cycle이므로 각 cycle마다 register들의 값을 업데이트하고 register들이 값을 가지고 있는다. 이들간의 값 교환을 Register Transfer (RT)라고 한다. 
+	- 모든 opcode의 공통 step은 아래와 같다. 
+		- IR $\leftarrow$ MEM\[PC]
+		- A $\leftarrow$ RF\[rs1(IR)]
+		- B $\leftarrow$ RF\[rs2(IR)]
+		- ALUOut $\leftarrow$ PC + 4
+	- 위 공통 step은 IF와 ID에 해당한다. 
+	- 이후 진행되는 opcode별 step (같은 줄은 동시에 실행, 줄의 순서대로 실행)
+		- R-type
+			- ALUOut $\leftarrow$ A (op) B
+			- RF\[rd(IR)] $\leftarrow$ ALUout / PC $\leftarrow$ PC + 4
+		- Load
+			- ALUOut $\leftarrow$ A + imm(IR)
+			- MDR $\leftarrow$ MEM\[ALUOut]
+			- RF\[rd(IR)] $\leftarrow$ MDR / PC $\leftarrow$ PC + 4
+		- Store 
+			- ALUOut $\leftarrow$ A + imm(IR)
+			- MEM\[ALUOut] $\leftarrow$ B / PC $\leftarrow$ PC + 4
+		- Branch
+			- cond(A, B)
+			- if (!cond) PC $\leftarrow$ ALUOut / 아랫줄 실행 안함
+			- PC $\leftarrow$ PC + imm(IR)
+		- JAL
+			- RF\[rd(IR)] $\leftarrow$ ALUOut / PC $\leftarrow$ PC + imm(IR)
+		- JALR
+			- RF\[rd(IR)] $\leftarrow$ ALUOut / PC $\leftarrow$ A + imm(IR)
+
+- Micro Sequencer(Micro-code controller)
+	- 각 Instruction + step에 따라 모든 control signals를 세팅하는 controller
+	- Horizontal Microcode
+		- ![[SmartSelect_20240329_224723_Flexcil.jpg]]
+	- Vertical Microcode
+		- ![[SmartSelect_20240329_224833_Flexcil.jpg]]
+	- Vertical Microcode가 k << n, k << m인 경우에 더 공간을 작게 차지한다. ($2^n \times m \ \ vs. \ \ 2^n \times k + 2^k \times m$)

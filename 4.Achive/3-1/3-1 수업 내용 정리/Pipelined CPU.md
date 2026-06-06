@@ -1,0 +1,59 @@
+- Pipeline Idealism
+	- Motivation
+		- Increase throughput through better HW utilization
+	- Repetition of identical operations
+		- The same operation is repeated on many different inputs
+	- Repetition of independent operations
+		- No ordering dependencies between repeated operations
+	- Uniformly partitionable sub-operations
+		- Can be evenly divided into same-length sub-operations that do not share resources
+- Ideal Pipelining
+	- Performance model
+		- T ps가 걸리는 combinational logic $\rightarrow$ Throughput = ~$1\over T$ 
+		- 해당 logic을 S ps의 delay를 가지는 latch를 통해서 k stages로 나눈다. $\rightarrow$ Throughput = $1/(\frac{T}{k} + S)$ 
+	- Cost Model
+		- Non-pipelined version with combinational cost를 G라고 하고, Latch의 cost를 L이라고 하자 
+		- Non-pipelined version Cost = G + L
+		- k-stage pipelined version Cost = $G+L\times k$ 
+	- Optimal Cost/Performance 
+		- $\frac{d}{dk}(\frac{Lk+G}{\frac{1}{\frac{T}{k} + S}}) = 0 + 0 + LS - \frac{GT}{k^2} = 0$ 
+		- $k_{opt} = \sqrt{\frac{GT}{LS}}$ 
+
+- RISC Instruction processing
+	- 5 generic steps
+		- Instruction fetch
+		- Instruction decode and operand fetch
+		- ALU / execute
+		- Memory access
+		- Write - back
+	- 각 5단계를 pipelining한다
+
+- Pipelined Datapath
+	- before pipelining
+		- ![[SmartSelect_20240330_205209_Flexcil.jpg]]
+	- After pipelining
+		- ![[SmartSelect_20240330_205401_Flexcil.jpg]]
+	- + Pipeline register에 이름을 붙이면
+		- ![[SmartSelect_20240330_205523_Flexcil.jpg]]
+- Pipeline register 보강
+	- write register는 어디서 오는가?
+		- 위 그림에서는 받아오는 곳이 잘못되어 있다. 따라서 instruction에서 해당 register의 이름을 forwarding해주어야 한다. 
+		- ![[SmartSelect_20240330_212809_Flexcil.jpg]]
+
+- Control for Pipelining
+	- Pipeline CPU에서는 Control 또한 Pipeline register를 통해서 다음 단계로 보내주어야 한다. 
+	- 그런 Control은 IF단계 이후에 instruction에 따라 나뉜다. 
+	- ![[SmartSelect_20240330_213222_Flexcil.jpg]]
+	- ![[SmartSelect_20240330_213617_Flexcil.jpg]]
+
+- Reality of Instruction Pipeline
+	- No identical operations
+		- Unify instruction types
+		- Combine instruction types to flow through "multi-function" pipe
+	- No uniform sub-operations
+		- Balance pipeline stages
+		- Stage-latency calculation to make balanced stages
+	- No independent operations
+		- Remove dependency and/or busy resources
+		- Duplicate contended resources
+		- Inter-instruction dependency detection and resolution

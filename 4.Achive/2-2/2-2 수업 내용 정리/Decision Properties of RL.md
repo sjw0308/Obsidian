@@ -1,0 +1,22 @@
+- Membership problem
+	- Q: Is string w in RL L?
+	- Assume L is represented by a DFA M
+	- $\delta_M(start, w)$ goto final state?
+- Emptiness Problem
+	- Q: Given a regular language, does the language contain any string at all?
+	- start state to final state path를 찾는 문제로 치환 가능
+- Infiniteness Problem
+	- Q: Is a given regular language infinite?
+	- Suppose DFA with n states for the language
+	- if the language contains any string of length n or more, then the language is infinite
+- Equivalence Problem
+	- Q: Given regular language L and M, is L = M?
+	- using Product DFA.
+		- Let DFA's for L, M have set of states Q and R
+		- Product DFA has a set of states $Q\times R$
+		- Start state = $[q_0, r_0]$
+		- Transition: $\delta([q, r], a) = [\delta_L(q, a), \delta_M(r,a)]$ 
+	- Equivalence Problem은 PDFA의 Final state를 두 DFA 중 하나만 Final state인 state의 묶음으로 설정하면 PDFA의 Emptiness Problem으로 치환 가능
+- Containment Problem
+	- Q: Given regular languages L and M, is $L\subseteq M$?
+	- Equivalence Problem과 비슷하게 PDFA를 사용하지만 Final state를 L에서는 final이고, M에서는 아닌 state의 묶음으로 잡고 Emptiness Problem으로 치환한다. 
