@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "42cdd9b02fbe22d0",
+        "id": "0d66f7bbcadeb0cf",
         "type": "tabs",
         "children": [
           {
-            "id": "7added8001f20f82",
+            "id": "99483d073d72237b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,92 +20,8 @@
               "icon": "lucide-file",
               "title": "0.main"
             }
-          },
-          {
-            "id": "a63b1f30627b40d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/CS/HOME.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "HOME"
-            }
-          },
-          {
-            "id": "926e06130e70fc6b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/CS/Content/Lambda.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lambda"
-            }
-          },
-          {
-            "id": "8c8f0407976b834d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/20260611 일본여행.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "20260611 일본여행"
-            }
-          },
-          {
-            "id": "a125ff2cb8bf99fe",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/준비물 리스트.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "준비물 리스트"
-            }
-          },
-          {
-            "id": "8522c042a140cb2a",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "TaskNotes/Views/calendar-default.base",
-                "viewName": "Calendar"
-              },
-              "icon": "tasknotes-simple",
-              "title": "calendar-default"
-            }
-          },
-          {
-            "id": "9339c458b68a965a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "5.Daily Notes/2026/06/06.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "06"
-            }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -125,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
@@ -153,9 +71,12 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {},
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
               "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "북마크"
             }
           }
         ]
@@ -173,6 +94,16 @@
         "type": "tabs",
         "children": [
           {
+            "id": "85417bab954f882a",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
             "id": "e8003855b4b1aa47",
             "type": "leaf",
             "state": {
@@ -188,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "0.main.md",
+                "file": "1.Project/연세OC - 글로벌리더십/1주차.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 0.main"
+              "title": "백링크"
             }
           },
           {
@@ -222,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1.project/CS/HOME.md",
+                "file": "1.Project/연세OC - 글로벌리더십/1주차.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "HOME 의 개요"
+              "title": "개요"
             }
           },
           {
@@ -237,26 +168,15 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1.project/CS/HOME.md",
+                "file": "1.Project/연세OC - 글로벌리더십/1주차.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "HOME 의 나가는 링크"
-            }
-          },
-          {
-            "id": "85417bab954f882a",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "title": "나가는 링크"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -276,65 +196,56 @@
       "obsidian-git:Open Git source control": false,
       "pdf-plus:PDF++: Toggle auto-copy": true,
       "pdf-plus:PDF++: Toggle auto-focus": true,
-      "tasknotes:미니 캘린더 뷰 열기": true,
-      "tasknotes:캘린더 뷰 열기": false,
-      "tasknotes:작업 뷰 열기": true,
-      "tasknotes:일정 뷰 열기": true,
-      "tasknotes:칸반 보드 열기": true,
-      "tasknotes:뽀모도로 타이머 열기": false,
-      "tasknotes:뽀모도로 통계 열기": true,
-      "tasknotes:새 작업 만들기": true,
       "pdf-plus:PDF++: Toggle auto-paste": true
     }
   },
-  "active": "85417bab954f882a",
+  "active": "9de67882f97d1049",
   "lastOpenFiles": [
-    "새 텍스트 문서.txt",
-    "5.Daily Notes/2026/06/06.md",
-    "TaskNotes/Views/calendar-default.base",
-    "5.Daily Notes/2026/06/05.md",
-    "1.Project/CS/Content/Lambda.md",
-    "1.Project/준비물 리스트.md",
-    "1.Project/20260611 일본여행.md",
+    "1.Project/연세OC - 인간의감정, 감정의인간/1주차.md",
+    "1.Project/everytime.png",
     "0.main.md",
-    "1.Project/CS/HOME.md",
-    "1.Project/CS/Content/Delegate and Event.md",
-    "5.Daily Notes/2026/06/04.md",
+    "1.Project/연세OC - 글로벌리더십/평가기준.md",
+    "1.Project/연세OC - 글로벌리더십/1주차.md",
+    "1.Project/연세OC - 글로벌리더십/과제.md",
+    "1.Project/연세OC - 인간의감정, 감정의인간",
+    "1.Project/연세OC - 글로벌리더십/평가기준.png",
+    "1.Project/딥러닝의 원리",
+    "1.Project/운영체제",
+    "1.Project/자연어처리 입문",
+    "무제.md",
+    "1.Project/미분 방정식",
+    "1.Project/고급 알고리즘",
+    "2.Area of responsiability/MasterPlan of Undergraduate/3-2.md",
+    "1.Project/연세OC - 글로벌리더십",
     "1.Project/PLAN.md",
-    "5.Daily Notes/2026/06",
-    "5.Daily Notes/2026",
-    "1.Project/MONEY.md",
-    "1.Project/CS/Content/Property.md",
-    "1.Project/CS/Content/Type.md",
-    "TaskNotes/Views/tasks-default.base",
-    "TaskNotes/Views/mini-calendar-default.base",
-    "test.md",
-    "TaskNotes/Views/agenda-default.base",
-    "TaskNotes/Views/relationships.base",
-    "TaskNotes/Views/pomodoro-stats.base",
-    "TaskNotes/Views/kanban-default.base",
-    "1.Project/Task.md",
-    "TaskNotes/Views",
-    "4.Achive/2-2/2-2 기말고사 일정.md",
-    "4.Achive/2-2/2-2 수업 내용 정리/2-2 12월 과제목록.md",
-    "4.Achive/2-2/2-2 중간고사 일정.md",
-    "2026-05-30.md",
-    "1.Project/CS/Content/Pasted image 20260528180135.png",
-    "1.Project/CS/Content/Exception.md",
-    "1.Project/CS/Content/General Programming.md",
+    "2.Area of responsiability/MasterPlan of Undergraduate/26년도 2학기 수강신청 계획.md",
+    "2.Area of responsiability/MasterPlan of Undergraduate/전체.md",
+    "4.Achive/military study/English level test/자기소개.md",
+    "4.Achive/military study/Claude Study/Main.md",
+    "TaskNotes/Views/calendar-default.base",
+    "4.Achive/military study/English level test",
+    "4.Achive/military study/Claude Study/기획과 좋은 프롬프트.md",
+    "2.Area of responsiability/MasterPlan of Undergraduate/Pasted image 20260702142126.png",
+    "4.Achive/military study/Claude Study/Content",
+    "4.Achive/military study/CS/Content/File IO.md",
+    "4.Achive/military study/CS/HOME.md",
+    "4.Achive/military study/CS/Content/Dynamic Type.md",
+    "4.Achive/military study/CS/Content/Reflection and Attribute.md",
+    "4.Achive/military study/CS/Content/screenwriter_temp_1783094866236.jpg",
+    "4.Achive/military study/CS/Content/screenwriter_temp_1783094163119.jpg",
+    "1.Project/2학기 본 수강신청.md",
     "2.Area of responsiability/MasterPlan of Undergraduate/4-2.md",
     "2.Area of responsiability/MasterPlan of Undergraduate/4-1.md",
-    "2.Area of responsiability/MasterPlan of Undergraduate/3-2.md",
+    "4.Achive/Trip/202606 일본/준비물 리스트.md",
+    "4.Achive/Trip/202606 일본/20260611 일본여행.md",
     "2.Area of responsiability/MasterPlan of Undergraduate/3-1.md",
-    "1.Project/CS/Content/Screenshot_20260519_224024_eBook.jpg",
-    "1.Project/CS/Content/Screenshot_20260519_223835_eBook.jpg",
-    "1.Project/CS/Content/Pasted image 20260519182414.png",
-    "1.Project/CS/Content/Pasted image 20260518001201.png",
-    "1.Project/CS/Content/Pasted image 20260517235355.png",
-    "1.Project/CS/Content/Pasted image 20260513233234.png",
-    "1.Project/CS/Content/Pasted image 20260513232729.png",
-    "1.Project/CS/Content/Pasted image 20260513231240.png",
-    "1.Project/CS/Content/Pasted image 20260513231238.png",
+    "2.Area of responsiability/MasterPlan of Undergraduate/2-2.md",
+    "4.Achive/military study/CS/Content/LINQ.md",
+    "4.Achive/military study/CS/Content/Pasted image 20260528180135.png",
+    "4.Achive/military study/CS/Content/Screenshot_20260519_224024_eBook.jpg",
+    "4.Achive/military study/CS/Content/Screenshot_20260519_223835_eBook.jpg",
+    "4.Achive/military study/CS/Content/Pasted image 20260519182414.png",
+    "4.Achive/military study/CS/Content/Pasted image 20260518001201.png",
     "Untitled.canvas",
     "무제 파일.canvas"
   ]
