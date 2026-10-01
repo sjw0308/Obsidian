@@ -7,7 +7,7 @@
   "showToolbar": true,
   "sendShortcut": "enter",
   "scrollThreadFromComposerEdges": false,
-  "referenceActiveNoteOnSend": false,
+  "referenceActiveNoteOnSend": true,
   "attachmentFolder": "Codex Attachments",
   "archiveExportEnabled": false,
   "archiveExportFolderTemplate": "Codex Archives",

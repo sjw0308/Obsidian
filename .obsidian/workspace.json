@@ -93,11 +93,13 @@
               "title": "0.main"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 487.5
+    "width": 487.5,
+    "collapsed": true
   },
   "right": {
     "id": "4a59304b37960381",
@@ -196,10 +198,12 @@
             "state": {
               "type": "codex-panel-view",
               "state": {
-                "version": 1
+                "version": 1,
+                "threadId": "01a0f80c-1be4-73a0-8007-878ffa0d9c40",
+                "threadTitle": "시스템의 주요 성질 설명"
               },
               "icon": "bot-message-square",
-              "title": "Codex"
+              "title": "Codex: 시스템의 주요 성질 설명"
             }
           }
         ]
@@ -228,12 +232,15 @@
   },
   "active": "85417bab954f882a",
   "lastOpenFiles": [
-    "1. Concept.md",
+    "0.main.md",
     "1.Project/전산신호처리/정리.md",
+    "1.Project/전산신호처리/정리/1. Concept.md",
+    "1.Project/전산신호처리/정리/4. Linear Systems and Convolution.md",
+    "1.Project/전산신호처리/정리/3. Linear System.md",
+    "1.Project/전산신호처리/정리/2. Power.md",
     "1.Project/전산신호처리/정리",
     "1.Project/운영체제/정리.md",
     "1.Project/운영체제/정리/Limited Direct Execution.md",
-    "0.main.md",
     "5.Daily Notes/2026/09/29.md",
     "1.Project/세부전공소개/20260928.md",
     "1.Project/자연어처리 입문/정리.md",
@@ -267,9 +274,6 @@
     "5.Daily Notes/2026/09",
     "1.Project/자연어처리 입문/정리/LaTex",
     "1.Project/자연어처리 입문/정리/LaTex/Pasted image 20260916171548.png",
-    "2.Area of responsiability/MasterPlan of Undergraduate/전체.md",
-    "2.Area of responsiability/MasterPlan of Undergraduate/26년도 2학기 수강신청 계획.md",
-    "2.Area of responsiability/MasterPlan of Undergraduate/4-2.md",
     "1.Project/세부전공소개",
     "4.Achive/Pokemon/SV",
     "4.Achive/3-2",
