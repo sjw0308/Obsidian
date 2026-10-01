@@ -1,7 +1,8 @@
 {
   "accentColor": "",
   "enabledCssSnippets": [
-    "unicalendar-ko",
-    "tasknote-custom"
-  ]
+    "unicalendar-ko"
+  ],
+  "theme": "obsidian",
+  "monospaceFontFamily": "Fira Code"
 }

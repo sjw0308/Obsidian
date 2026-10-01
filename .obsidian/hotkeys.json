@@ -17,5 +17,44 @@
   ],
   "obsidian-outliner:fold": [],
   "obsidian-outliner:unfold": [],
-  "obsidian-outliner:system-info": []
+  "obsidian-outliner:system-info": [],
+  "daily-notes": [
+    {
+      "modifiers": [],
+      "key": "F9"
+    }
+  ],
+  "editor:open-link-in-new-window": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "Enter"
+    }
+  ],
+  "editor:open-link-in-new-leaf": [],
+  "editor:toggle-numbered-list": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "`"
+    }
+  ],
+  "editor:insert-codeblock": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "C"
+    }
+  ],
+  "editor:insert-table": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "\\"
+    }
+  ]
 }

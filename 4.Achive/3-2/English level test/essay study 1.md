@@ -1,0 +1,9 @@
+- Some people believe that university education should mainly focus on providing practical skills for students' future careers, while others argue that its primary purpose should be providing broad academic knowledge. Discuss both views and give your opinion.
+
+I strongly believe that university must educate academic knowledge to the students. I know, especially in Korea, some students think of university as a path to a company which they want. However, that is not a goal of the universities. I’ll talk about two main reasons why education of broad and base academic knowledge is crucial.
+
+The first reason is that every skill being used in every field is based on academic study. Therefore, if universities do not teach the base knowledge to students who just graduate the high school, the students cannot deeply understand the practical usage. On the other hand, even universities do not teach the practical skills, the students who deeply understand the base knowledge and experience similar study in wide field easily absorb the skills, too. 
+
+Second reason is that universities are not just supply center for specific companies. universities are main institution of growing the future researchers. if every universities teach the skill which is used now. only then national technology will be never improved. As a result, the companies which are provided the graduated students, only skill is taught, will loose international competitiveness. 
+
+Those are the main two reason why I trust the universities must teach the academic and fundamental knowledge to their students. Especially, my university, POSTECH, is an university which concentrates to research. Therefore, even computer science major, most close to industry, teach fundamental theory about computer and algorithm. I believe that makes student can debate about their deep idea. 

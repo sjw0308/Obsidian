@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "0d66f7bbcadeb0cf",
+        "id": "71e3dce780f39e7e",
         "type": "tabs",
         "children": [
           {
-            "id": "99483d073d72237b",
+            "id": "fbe9ab6a69b389c9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0.main.md",
+                "file": "1.Project/전산신호처리/정리.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0.main"
+              "title": "정리"
             }
           }
         ]
@@ -78,12 +78,26 @@
               "icon": "lucide-bookmark",
               "title": "북마크"
             }
+          },
+          {
+            "id": "27916a438794c8cd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "0.main.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0.main"
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 250.49999618530273
+    "width": 487.5
   },
   "right": {
     "id": "4a59304b37960381",
@@ -175,12 +189,24 @@
               "icon": "links-going-out",
               "title": "나가는 링크"
             }
+          },
+          {
+            "id": "1fc14021a820c69e",
+            "type": "leaf",
+            "state": {
+              "type": "codex-panel-view",
+              "state": {
+                "version": 1
+              },
+              "icon": "bot-message-square",
+              "title": "Codex"
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 693.8333129882812
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,56 +222,58 @@
       "obsidian-git:Open Git source control": false,
       "pdf-plus:PDF++: Toggle auto-copy": true,
       "pdf-plus:PDF++: Toggle auto-focus": true,
-      "pdf-plus:PDF++: Toggle auto-paste": true
+      "pdf-plus:PDF++: Toggle auto-paste": true,
+      "codex-panel:Open panel": false
     }
   },
-  "active": "9de67882f97d1049",
+  "active": "85417bab954f882a",
   "lastOpenFiles": [
-    "1.Project/연세OC - 인간의감정, 감정의인간/1주차.md",
-    "1.Project/everytime.png",
+    "1. Concept.md",
+    "1.Project/전산신호처리/정리.md",
+    "1.Project/전산신호처리/정리",
+    "1.Project/운영체제/정리.md",
+    "1.Project/운영체제/정리/Limited Direct Execution.md",
     "0.main.md",
-    "1.Project/연세OC - 글로벌리더십/평가기준.md",
-    "1.Project/연세OC - 글로벌리더십/1주차.md",
+    "5.Daily Notes/2026/09/29.md",
+    "1.Project/세부전공소개/20260928.md",
+    "1.Project/자연어처리 입문/정리.md",
+    "1.Project/자연어처리 입문/정리/N-gram Language Modeling.md",
+    "1.Project/자연어처리 입문/정리/Word Tokenization.md",
+    "1.Project/자연어처리 입문/정리/LaTex/LaTex 입문.md",
+    "1.Project/자연어처리 입문/정리/Regular expressions.md",
+    "1.Project/자연어처리 입문/정리/Pasted image 20260922164840.png",
+    "1.Project/자연어처리 입문/정리",
+    "1.Project/자연어처리 입문/week 02/2주차.md",
+    "1.Project/everytime.png",
+    "1.Project/운영체제/정리/Pasted image 20260921155438.png",
+    "1.Project/운영체제/정리/Pasted image 20260921155536.png",
+    "1.Project/세부전공소개/20260921.md",
+    "1.Project/세부전공소개/20260914.md",
+    "1.Project/운영체제/정리/From Program to Process.md",
+    "1.Project/운영체제/정리/Pasted image 20260921004715.png",
+    "1.Project/운영체제/정리/Pasted image 20260921005900.png",
+    "1.Project/운영체제/정리/Pasted image 20260921005852.png",
+    "1.Project/운영체제/정리/Pasted image 20260921002538.png",
+    "1.Project/운영체제/정리/What is OS.md",
+    "1.Project/고급 알고리즘/정리.md",
+    "1.Project/운영체제/정리",
+    "1.Project/고급 알고리즘/정리/1-2 주차 정리.md",
+    "1.Project/고급 알고리즘/정리",
+    "1.Project/연세OC - 글로벌리더십/3주차.md",
     "1.Project/연세OC - 글로벌리더십/과제.md",
-    "1.Project/연세OC - 인간의감정, 감정의인간",
     "1.Project/연세OC - 글로벌리더십/평가기준.png",
-    "1.Project/딥러닝의 원리",
-    "1.Project/운영체제",
-    "1.Project/자연어처리 입문",
-    "무제.md",
-    "1.Project/미분 방정식",
-    "1.Project/고급 알고리즘",
-    "2.Area of responsiability/MasterPlan of Undergraduate/3-2.md",
-    "1.Project/연세OC - 글로벌리더십",
-    "1.Project/PLAN.md",
-    "2.Area of responsiability/MasterPlan of Undergraduate/26년도 2학기 수강신청 계획.md",
+    "5.Daily Notes/2026/09/18.md",
+    "PLAN.md",
+    "5.Daily Notes/2026/09",
+    "1.Project/자연어처리 입문/정리/LaTex",
+    "1.Project/자연어처리 입문/정리/LaTex/Pasted image 20260916171548.png",
     "2.Area of responsiability/MasterPlan of Undergraduate/전체.md",
-    "4.Achive/military study/English level test/자기소개.md",
-    "4.Achive/military study/Claude Study/Main.md",
-    "TaskNotes/Views/calendar-default.base",
-    "4.Achive/military study/English level test",
-    "4.Achive/military study/Claude Study/기획과 좋은 프롬프트.md",
-    "2.Area of responsiability/MasterPlan of Undergraduate/Pasted image 20260702142126.png",
-    "4.Achive/military study/Claude Study/Content",
-    "4.Achive/military study/CS/Content/File IO.md",
-    "4.Achive/military study/CS/HOME.md",
-    "4.Achive/military study/CS/Content/Dynamic Type.md",
-    "4.Achive/military study/CS/Content/Reflection and Attribute.md",
-    "4.Achive/military study/CS/Content/screenwriter_temp_1783094866236.jpg",
-    "4.Achive/military study/CS/Content/screenwriter_temp_1783094163119.jpg",
-    "1.Project/2학기 본 수강신청.md",
+    "2.Area of responsiability/MasterPlan of Undergraduate/26년도 2학기 수강신청 계획.md",
     "2.Area of responsiability/MasterPlan of Undergraduate/4-2.md",
-    "2.Area of responsiability/MasterPlan of Undergraduate/4-1.md",
-    "4.Achive/Trip/202606 일본/준비물 리스트.md",
-    "4.Achive/Trip/202606 일본/20260611 일본여행.md",
-    "2.Area of responsiability/MasterPlan of Undergraduate/3-1.md",
-    "2.Area of responsiability/MasterPlan of Undergraduate/2-2.md",
-    "4.Achive/military study/CS/Content/LINQ.md",
-    "4.Achive/military study/CS/Content/Pasted image 20260528180135.png",
-    "4.Achive/military study/CS/Content/Screenshot_20260519_224024_eBook.jpg",
-    "4.Achive/military study/CS/Content/Screenshot_20260519_223835_eBook.jpg",
-    "4.Achive/military study/CS/Content/Pasted image 20260519182414.png",
-    "4.Achive/military study/CS/Content/Pasted image 20260518001201.png",
+    "1.Project/세부전공소개",
+    "4.Achive/Pokemon/SV",
+    "4.Achive/3-2",
+    "1.Project/전산신호처리",
     "Untitled.canvas",
     "무제 파일.canvas"
   ]
