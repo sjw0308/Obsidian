@@ -1,0 +1,46 @@
+
+Text Classification
+- Input으로 어떤 형태의 document와 fixed class set이 들어왔을 떄 output class를 출력하는 것
+- Basic Classification Method = Hand-coded rule
+- Another method: Supervised machine learning
+
+Naive Bayes
+- Intuition: Bag of words -> context를 신경쓰지 않음
+- Bayes' Rule
+	- document d와 class c에 대해서
+	- $P(c|d)=\frac{P(d|c)P(c)}{P(d)}$
+- Naive Bayes Classifier
+	- $c_{MAP} = argmax_{c\in C}P(c|d) = argmax_{c\in C} \frac{P(d|c)P(c)}{P(d)}=argmax_{c\in C}P(d|c)P(c)$
+	- 위 식에서 마지막엔 모든 class에 동일하게 적용되는 P(d)는 없앨 수 있다.
+	- 위 식에서 P(d|c)를 likelihood, P(c)를 Prior라고 한다. 
+	- 이때 document d를 $x_{1}, \dots, x_{n}$라고 하면 bag of words assumption에 의해서
+		- $P(d|c)=P(x_{1},\dots,x_{n}|c)=P(x_{1}|c)\cdot P(x_{2}|c)\cdot\ \dots\ P(x_{n}|c)$
+- $c_{NB} = argmax_{c_{j}\in C}P(c_{j})\prod\limits_{i \in \text{positions}}P(x_{i}|c_{j})$
+	- 여기서 로그를 사용
+	- $c_{NB} = argmax_{c_{j}\in C}\left[ \log{P(c_{j})}+\sum\limits_{i \in \text{positions}}\log{P(x_{{i}}|c_{j})} \right]$
+- Likelihood를 어떻게 계산하면 될까?
+	- First attempt: Maximum likelihood estimates
+		- $\hat{P}(w_{i}|c_{j})=\frac{\text{count}(w_{i},c_{j})}{\sum\limits_{w\in V}\text{count}(w,c_{j})}$
+		- 문제는 위 여러 확률 중 하나라도 0이되면 전체 값이 0이 되기 때문에 문제가 발생
+	- Laplace(add-1) smoothing 
+		- $\hat{P}(w_{i}|c_{j})=\frac{\text{count}(w_{i},c_{j})+1}{(\sum\limits_{w\in V}\text{count}(w,c_{j}))+|V|}$
+		- 모든 count에 1을 더해서 0이 되는 경우를 없앰
+- Unknown words -> 무시
+- Stop words(a, the같이 의미 없는 것들) -> 무시
+- Binary multinominal naive Bayes -> 한 문장에서 같은 단어가 여러번 나오면 한번으로 취급
+- Dealing with Negation -> not 뒤에 오는 단어들에 NOT_를 달아서 negation을 표시
+- Lexicons -> 미리 사전작업 된 dataset
+- Naive Bayes vs. Unigram -> Prior여부 차이임
+- 평가 Matrix
+	- (true / false) + (positive / negative)
+		- 앞에 있는건 시스템이 낸 답이 정답과 같은지 여부
+		- 뒤에 있는 건 시스템이 낸 정답이 positive인지 아닌지
+	- 이때 $\text{accuracy} = \frac{\text{tp + tn}}{\text{tp+fp+tn+fn}}$
+	- 그런데 전체 data가 bias가 있다면 accuracy가 시스템의 좋고 나쁨을 잘 나타내지 못한다
+	- $\text{precision}=\frac{\text{tp}}{\text{tp+fp}}$
+	- $\text{recall} = \frac{\text{tp}}{\text{tp+fn}}$
+	- $\text{F1} = \frac{2PR}{P+R}$ P랑 R은 precision과 recall
+	- 여러 class가 있다면 
+		- 각각 2개씩 뽑아서 ...
+		- microaverage: 각각의 tp, fp, tn, fn을 더한 후 거기서 precesion or recall을 구한다
+		- macroaverage: 각각의 precision or recall을 구한 후 이들을 평균낸다

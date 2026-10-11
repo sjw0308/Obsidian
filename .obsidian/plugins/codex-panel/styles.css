@@ -1,4 +1,4 @@
-/* Codex Panel v5.9.4 */
+/* Codex Panel v5.9.6 */
 
 .codex-panel,
 .codex-panel-turn-diff,
@@ -256,7 +256,7 @@
   align-items: center;
   min-width: 0;
   padding-inline-end: var(--size-4-2);
-  border-radius: var(--radius-s);
+  border-radius: var(--nav-item-radius, var(--radius-s));
 }
 
 .codex-panel-ui__nav-row:hover,
@@ -585,7 +585,8 @@
   user-select: text;
 }
 
-.codex-panel__status-panel-items {
+.codex-panel__status-panel-items,
+.codex-panel__chat-actions-panel-items {
   display: flex;
   flex-direction: column;
   gap: var(--nav-item-margin-bottom, var(--codex-panel-panel-gap));
