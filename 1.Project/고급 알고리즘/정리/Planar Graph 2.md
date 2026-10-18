@@ -1,0 +1,35 @@
+
+Coloring Problem
+- Coloring Problem (Optimization)
+	- Given a graph G=(V,E), find a smallest value k s.t. G is k-colorable.
+- k-Coloring Problem (Search Version)
+	- Given a graph G=(V,E), and an integer k, check if G is k-colorable, and find a k-coloring
+- Known Results
+	- The 2-coloring problem can be solved in polynomial time for any graph
+	- The 3-coloring problem is NP-complete for planar graphs
+		- More generally, the 3-coloring problem cannot be solved in $2^{O(\sqrt n)}$ time for planar graphs under some reasonable assumption.
+	- The the 3-coloring problem cannot be solved in $2^{O(\sqrt n)}$ time for planar graphs
+	- The 4-coloring problem can be solved in polynomial time for planar graph
+		- Indeed, every planar graph can be colored with four colors.
+- Theorem. Every planar graph has 6-coloring
+	- Pf> Using induction
+	- Base Condition: $n\leq 6$ 이면 자명
+	- Induction Step:
+		- Fary's Theorem에서 degree가 5이하인 임의의 vertex를 v라고 하면 $G'=G-v$ 가 6-coloring이 가능함
+		- 이후 v를 이웃들과 다른 색으로 칠한 것으로 추가하면 됨 $\square$
+- Theorem. Every planar graph has a 5-coloring
+	- Pf> "
+	- Maximal plane graph G에 대해서 증명하자
+	- 각 vertex에 대하여 $C(v)$ 를 v에 칠할 수 있는 color의 set으로 정의하고 시작은 $C(v) = \{1,\dots 5\}$ 로 모두 해놓고 모든 vertex를 하나하나 칠한다고 생각하자
+	- Given a near-maximal plane graph G'에 대하여(near-maximal은 outer face를 제외한 모든 face가 triangle이고 outer boundary가 cycle인 planar graph이다. B는 boundary vertices)
+		- two adjacent vertices x, y in B를 $\alpha, \beta$로 칠한다
+		- $|C(v)|\geq3$ for all other vertices in B
+		- $|C(v)|=5$ for all vertices not in B
+	- Case1.
+		- B를 가로지르는 현이 있는 경우. 이를 uv라고 하자
+		- uv로 나뉜 두 그래프 중 xy를 포함한 부분에 Induction Hypothesis를 적용 후 나머지 부분에 uv를 기준으로 IH를 적용하면 됨 $\square$
+	- Case2. 
+		- x와 연결된 vertex중 y가 아닌 걸 $v_{0}$ 라고 하고 그 것과 이웃인 모든 vertices를 x부터 $x, v_{1}, v_{2}, \dots, v_{t}, w$ 라고 하자(w, x, $v_{0}$만 B에 속한 vertices)
+		- $v_{0}$ 도 B에 속했으므로 $|C(v_{0})|\geq 3$이다. 이때 $\alpha$가 아닌 두 색 $\gamma, \eta$ 를 고르자
+		- 위 두 색을 $v_{0}$의 이웃인 모든 vertices 중 x, w가 아닌 것들의 C(v)에서 제거한다. 
+		- $G'' = G'- \{v_{0}\}$이 그럼 IH에 해당 되므로 IH를 적용하고, $v_{0}$를 $\gamma, \eta$ 중 w에 칠하지 않은 것으로 칠하면 G'도 색칠할 수 있다. 

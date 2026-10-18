@@ -1,0 +1,15 @@
+Overview
+- 이 수업에서는 NP-hard 문제들을 다룰 것이다. 
+	- NP-hard: 풀이가 Polynomial time에 풀리지 않는 문제 (주어진 답에 대한 검증도 P일 필요가 없음)
+- NP-Completeness를 다루는 방법은 총 3가지가 있음
+	- Sacrifice generality
+		- 일반성을 포기하는 방법. 모든 경우에 적용할 수 있는 해가 아닌 특정 경우에 적용할 수 있는 Polytime solution을 찾는 방법
+		- e.g. Independent Set 은 일반적으로 NP-Complete지만 Independent Set in Tree 는 Polytime에 풀 수 있다. 
+	- Sacrifice optimality
+		- 최적성을 포기하는 방법. 완벽한 해가 아닌 정답과 최대 얼마나 차이가 나는지를 증명할 수 있는 solution을 찾는 방법
+		- find solution of cost in range $\left[ \left( \frac{1}{c} \right) \cdot OPT,\ c \cdot OPT \right]$, 이 때 c는 Approximate factor라고 하고, OPT는 Optimal cost 라고 한다. 
+		- e.g. Set Cover은 $O(\log n)$ 인 approximate factor를 이용해서 approximate할 수 있다. 
+	- Sacrifice efficiency
+		- Polytime이 아니더라도 부르트포스 보다 빠른 방법을 찾거나 새로운 parameter를 도입해서 비교적 빠른 풀이를 찾는 방법. 
+		- e.g. Traveling Salesman 문제는 $2^{O(n)}$ 으로 풀 수 있는데 이는 Polytime이 아니지만 brute-force로 풀었을 때인 $n!$보다는 빠르다
+		- e.g. Vertex Cover 문제는 vertex cover set의 size가 최대 k일 때로 가정하여 $2^{O(k)}n^{O(1)}$로 풀 수 있고, 이는 원래 풀이인 $2^{o(n)}$보다 빠를 수 있다.  

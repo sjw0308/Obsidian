@@ -77,7 +77,7 @@ Practical Scheduling Policies
 	- vs lottery scheduling
 		- lottery scheduling은 운에 의존해야하는 것에 반해서 우리가 정해서 fair함을 유지할 수 있다는 장점이 있지만 보통 lottery를 많이 사용함
 		- calibrating global states is difficult <<= 이게 원인 중 하나
-- Completely Fair Scheduler
+- Completely Fair Scheduler (CFS)
 	- 지금까지 scheduler의 overhead는 O(n)이었다. 그리고 이런 overhead를 줄이는게 key goal 중 하나이다. 여기서 다룰 Linux Completely Fair Scheduler(CFS)는 scalable한 것이 특징이다.
 	- Vruntime: Process가 실행되면 일정비율로 늘어나는 virtual runtime. CFS는 Vruntime이 가장 작은 process를 실행한다.
 	- sched_latency
