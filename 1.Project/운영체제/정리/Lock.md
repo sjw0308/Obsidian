@@ -1,4 +1,4 @@
-
+   
 Basic Criteria
 - Mutual exclusion
 	- 한 Thread가 lock을 잡았다 = 다른 thread들이 해당 section으로 들어오지 못한다

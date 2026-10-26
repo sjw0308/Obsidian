@@ -18,7 +18,7 @@ Coloring Problem
 		- Fary's Theorem에서 degree가 5이하인 임의의 vertex를 v라고 하면 $G'=G-v$ 가 6-coloring이 가능함
 		- 이후 v를 이웃들과 다른 색으로 칠한 것으로 추가하면 됨 $\square$
 - Theorem. Every planar graph has a 5-coloring
-	- Pf> "
+	- Pf>
 	- Maximal plane graph G에 대해서 증명하자
 	- 각 vertex에 대하여 $C(v)$ 를 v에 칠할 수 있는 color의 set으로 정의하고 시작은 $C(v) = \{1,\dots 5\}$ 로 모두 해놓고 모든 vertex를 하나하나 칠한다고 생각하자
 	- Given a near-maximal plane graph G'에 대하여(near-maximal은 outer face를 제외한 모든 face가 triangle이고 outer boundary가 cycle인 planar graph이다. B는 boundary vertices)

@@ -33,7 +33,7 @@ Planar Graphs
 		- pf>
 			- Planar graph의 subgraph 또한 plannar이다. 
 			- G의 subdivision이 planar라면, G또한 planar이다. 
-	- Theorem(Kuratowski). 그래프가 plannar이다. $\Leftrightarrow$ 그래프가 $K_{5}$나 $K_{3,3}$의 subdivision을 subgraph로 갖지 않는다.
+	- Theorem(Kuratowski). 그래프가 planar이다. $\Leftrightarrow$ 그래프가 $K_{5}$나 $K_{3,3}$의 subdivision을 subgraph로 갖지 않는다.
 - Forbidden minor
 	- A minor of a graph G
 		- G에서...

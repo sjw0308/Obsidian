@@ -2,7 +2,7 @@
 Thread
 - Process내에서 여러 execution을 동시에 실행하게 만들어주는 개념
 - Process의 process라고 생각하면 된다
-- PC가 여러개이다
+- PC가 각자 따로 있다
 - Context Switch between Threads
 	- 각각의 Thread는 각자의 PC와 Register set을 가진다
 	- 그렇지만 같은 virtual memory와 file system을 갖는다

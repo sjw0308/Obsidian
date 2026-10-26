@@ -1,6 +1,6 @@
 
 - Lemma. 모든 n-vertex tree는 T-c의 모든 component들의 크기가 n/2 이하가 되게 하는 vertex c가 존재하고 이를 centroid라고 한다. 
-	- proof
+	- pf
 	- 임의의 vertex v를 잡는다
 	- component를 확인한다 
 	- v가 centroid면 끝나고 아니라면 크기가 n/2보다 더 큰 component가 하나 있을텐데 해당 component에 있고, v와 연결된 vertex를 u라고 한다. 
