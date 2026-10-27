@@ -5,7 +5,7 @@ Thread
 - PC가 각자 따로 있다
 - Context Switch between Threads
 	- 각각의 Thread는 각자의 PC와 Register set을 가진다
-	- 그렇지만 같은 virtual memory와 file system을 갖는다
+	- 그렇지만 같은 virtual memory(memory space)와 file system을 갖는다
 	- 그래서 Process control blocks와 같이 현재 상태를 저장하는 Thread control block(TCB)가 존재한다.
 	- 근데 thread끼리 바뀔 때는 address space는 남는다는 점이 다르다
 

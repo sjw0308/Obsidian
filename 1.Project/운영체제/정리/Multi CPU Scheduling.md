@@ -15,7 +15,7 @@ Type of Parallelism
 - Hybrid parallelism
 Amdahl's Law
 - S를 serial portion (lock 등으로 인해서 병렬적으로 실행이 불가능한 부분의 비율)이라고 하고 N을 # of processing core라고 하면
-- $\text{speed up} = \frac{1}{S+\frac{1-S}{N}}$
+- $\text{speed up} \leq \frac{1}{S+\frac{1-S}{N}}$
 - 어쩌면 process를 늘리는 것보다도 serial portion을 줄이는게 중요하다
 
 Multiprocessor Scheduling Background
@@ -23,7 +23,7 @@ Multiprocessor Scheduling Background
 - multicore는 memory는 share하지만 cache는 각자 가지고 있다고 가정한다
 	- 그래서 Cache coherence 문제가 발생한다 
 	- 이는 보통 hardware적으로 해결한다
-- multicore 때문에 발생할 수 있는 synchronization 문제가 있음으로 lock을 더 신경써야 한다. 
+- multicore 때문에 발생할 수 있는 synchronization 문제가 있음으로 lock을 더 신경써야 한다. (free 등등을 확인)
 - Cache Affinity
 	- 프로세스 A를 CPU0에서 실행했으면 A는 계속 CPU0에서 실행하는게 좋다. 
 

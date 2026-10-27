@@ -25,7 +25,7 @@ Basics of Scheduling Policies
 - Round Robin Scheduling
 	- 우리가 임의로 정한 Time slice에 따라 다음 queue에 있는 job으로 Switch
 	- RR(Round Robin)은 Fair하지만(Response time은 짧지만) Turnaround time을 기준으로는 성능이 나쁨
-	- A,B,C가 와서 각각 10초씩 걸려서 완료된다면 -> Average turnaround time $\sim$ 30
+	- A,B,C가 와서 각각 10초씩 걸려서 완료된다면 -> Average turnaround time $\approx$ 30
 	- Time slice를 잘 잡는 것이 성능에 critical함. 짧으면 response time은 짧아지지만 overhead가 증가, 길어지면 반대
 - IO발생
 	- IO가 완료될 때까지 해당 job을 block하고 다른 job을 schedule해야됨.

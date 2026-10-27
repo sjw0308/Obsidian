@@ -52,7 +52,7 @@ Context Switch
 - A cooperative Approach
 	- process에서 알아서 syscall을 부르고 불렀을 때 return-from-trap을 하기 전에 switch할지 말지 정하자
 - A Non-cooperative Approach
-	- Hardware에 있는 timer를 이용해서 interrupt(IO가 발생시키는 trap)을 발생시켜서 특정 시간마다 강제로 syscall(interrupt handler)를 발생시킨다. 이때 switching을 결정한다. 
+	- Hardware에 있는 timer를 이용해서 interrupt(IO가 발생시키는 trap)를 발생시킨다. 이때 switching을 결정한다. 
 - 현재의 OS는 위 두 방법을 모두 사용한다. 
 1. Scheduler에서 현재 process를 이어갈지 아니면 다른 것으로 바꿀지 정한다. 만약 바꾸기로 정했다면 OS가 context switch를 실행한다. 
 2. Context switch는 low-level의 assembly code의 piece로 기존에 실행중이던 kernel register들(process structure)를 저장하고 실행 시킬 것을 불러온다. 

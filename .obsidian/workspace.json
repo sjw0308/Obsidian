@@ -4,137 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "59f20fa790c0f868",
+        "id": "916d7fddfe5a678b",
         "type": "tabs",
         "children": [
           {
-            "id": "85c741c5cd8f31a2",
+            "id": "cf9c7fff24553964",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1.Project/고급 알고리즘/고급 알고리즘 정리.md",
+                "file": "1.Project/운영체제/운영체제 정리.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "고급 알고리즘 정리"
+              "title": "운영체제 정리"
             }
           },
           {
-            "id": "6f70433b2b9e90dc",
+            "id": "f625c8873a319148",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1.Project/고급 알고리즘/정리/Chordal Graph 2.md",
+                "file": "1.Project/운영체제/모의시험/운영체제 모의시험.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chordal Graph 2"
+              "title": "운영체제 모의시험"
             }
           },
           {
-            "id": "57ef62fa49f20a29",
+            "id": "a3b524e2ef4d7ed3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1.Project/고급 알고리즘/정리/Chordal Graph 1.md",
+                "file": "1.Project/운영체제/모의시험/중간고사_최종본.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chordal Graph 1"
+              "title": "중간고사_최종본"
             }
           },
           {
-            "id": "b2b6a0d82fd4538a",
+            "id": "5deb63d5e6faeeb8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1.Project/고급 알고리즘/정리/Treewidth 2.md",
+                "file": "1.Project/운영체제/모의시험/모의시험_06_답지.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Treewidth 2"
-            }
-          },
-          {
-            "id": "dc0dd9eedba40b45",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/고급 알고리즘/정리/Treewidth 1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Treewidth 1"
-            }
-          },
-          {
-            "id": "02f00138246b50a6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/고급 알고리즘/정리/Planar Graph 4.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Planar Graph 4"
-            }
-          },
-          {
-            "id": "d801cc98a2a46799",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/고급 알고리즘/정리/Planar Graph 3.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Planar Graph 3"
-            }
-          },
-          {
-            "id": "5b1710e045e5017b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/고급 알고리즘/정리/Planar Graph 2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Planar Graph 2"
-            }
-          },
-          {
-            "id": "0247a4ec7abaf9f8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/고급 알고리즘/정리/Planar Graph 1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Planar Graph 1"
+              "title": "모의시험_06_답지"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -341,54 +271,53 @@
       "codex-panel:Open panel": false
     }
   },
-  "active": "6f70433b2b9e90dc",
+  "active": "a3b524e2ef4d7ed3",
   "lastOpenFiles": [
-    "1.Project/고급 알고리즘/정리/Chordal Graph 1.md",
-    "1.Project/고급 알고리즘/정리/Treewidth 2.md",
-    "1.Project/고급 알고리즘/정리/Treewidth 1.md",
-    "1.Project/고급 알고리즘/고급 알고리즘 정리.md",
-    "1.Project/고급 알고리즘/정리/Planar Graph 1.md",
-    "1.Project/고급 알고리즘/정리/Chordal Graph 2.md",
-    "1.Project/고급 알고리즘/정리/Planar Graph 4.md",
-    "1.Project/고급 알고리즘/정리/Planar Graph 3.md",
-    "1.Project/고급 알고리즘/정리/Planar Graph 2.md",
-    "1.Project/전산신호처리/전산신호처리 정리.md",
-    "1.Project/전산신호처리/정리/5. Fourier Series.md",
-    "무제.md",
-    "1.Project/운영체제/정리/Deadlock.md",
+    "1.Project/운영체제/모의시험/모의시험_06_정답.md",
+    "1.Project/운영체제/모의시험/모의시험_06_문제.pdf",
+    "1.Project/운영체제/모의시험/운영체제 모의시험.md",
+    "1.Project/운영체제/모의시험/모의시험_06_답지.md",
     "1.Project/운영체제/운영체제 정리.md",
-    "1.Project/운영체제/모의시험/모의시험_01_답지.md",
-    "1.Project/운영체제/모의시험/모의시험_01_채점.md",
-    "1.Project/운영체제/정리/From Program to Process.md",
-    "1.Project/운영체제/모의시험/check3-2.png",
-    "1.Project/운영체제/모의시험/check3-1.png",
-    "1.Project/운영체제/모의시험/review_03_04.png",
-    "1.Project/운영체제/모의시험/check4-4.png",
-    "1.Project/운영체제/모의시험/check4-3.png",
-    "1.Project/운영체제/모의시험/check4-2.png",
-    "1.Project/운영체제/모의시험/check4-1.png",
-    "1.Project/운영체제/모의시험/check3-4.png",
-    "1.Project/운영체제/모의시험/check3-3.png",
-    "1.Project/운영체제/모의시험/모의시험_04_정답.md",
-    "1.Project/운영체제/모의시험/모의시험_04_문제.pdf",
-    "1.Project/운영체제/모의시험/모의시험_03_정답.md",
-    "1.Project/운영체제/모의시험/모의시험_03_문제.pdf",
-    "1.Project/운영체제/모의시험/build_03_04.py",
-    "1.Project/운영체제/모의시험/모의시험_01_문제.pdf",
+    "1.Project/운영체제/모의시험/중간고사_최종본.md",
+    "1.Project/운영체제/모의시험/모의시험_05_답지.md",
+    "1.Project/운영체제/모의시험/모의시험_05_문제.pdf",
+    "1.Project/운영체제/모의시험/모의시험_04_답지.md",
+    "1.Project/운영체제/모의시험/모의시험_04_채점.md",
     "1.Project/운영체제/정리/Multi CPU Scheduling.md",
-    "Pasted image 20261024013705.png",
+    "1.Project/운영체제/정리/Deadlock.md",
     "1.Project/운영체제/정리/Semaphore.md",
     "1.Project/운영체제/정리/Lock.md",
     "1.Project/운영체제/정리/Concurrency.md",
     "1.Project/운영체제/정리/Process Scheduling.md",
+    "1.Project/운영체제/정리/From Program to Process.md",
     "1.Project/운영체제/정리/Limited Direct Execution.md",
+    "1.Project/운영체제/모의시험/모의시험_03_정답.md",
+    "1.Project/운영체제/모의시험/모의시험_03_답지.md",
+    "1.Project/운영체제/모의시험/모의시험_03_채점.md",
+    "1.Project/운영체제/모의시험/tmp/pdfs/sheet3.png",
+    "1.Project/운영체제/모의시험/tmp/pdfs/sheet2.png",
+    "1.Project/운영체제/모의시험/tmp/pdfs/sheet1.png",
+    "1.Project/운영체제/모의시험/tmp/pdfs/sheet0.png",
+    "1.Project/운영체제/모의시험/tmp/pdfs/check6-10.png",
+    "1.Project/운영체제/모의시험/tmp/pdfs/check6-09.png",
+    "1.Project/운영체제/모의시험/tmp/pdfs/check6-08.png",
+    "1.Project/운영체제/모의시험/tmp/pdfs/check6-07.png",
+    "1.Project/운영체제/모의시험/tmp/pdfs/check6-06.png",
+    "1.Project/운영체제/모의시험/tmp/pdfs/check6-05.png",
+    "1.Project/운영체제/모의시험/tmp/pdfs/verified_data.json",
+    "1.Project/운영체제/모의시험/모의시험_05_정답.md",
+    "1.Project/운영체제/모의시험/tmp/pdfs/build.py",
+    "1.Project/운영체제/모의시험/tmp/pdfs",
+    "1.Project/운영체제/모의시험/tmp",
     "1.Project/운영체제/정리/What is OS.md",
+    "1.Project/운영체제/모의시험/모의시험_02_채점.md",
+    "1.Project/운영체제/모의시험/모의시험_01_채점.md",
+    "1.Project/운영체제/모의시험/모의시험_02_답지.md",
     "1.Project/운영체제/모의시험/모의시험_02_문제.pdf",
-    "1.Project/운영체제/모의시험",
-    "1.Project/운영체제/make_mock.py",
-    "1.Project/미분 방정식/중간고사 대비",
-    "1.Project/미분 방정식/새 폴더",
-    "1.Project/전산신호처리/중간고사 대비",
+    "1.Project/운영체제/모의시험/모의시험.zip",
+    "1.Project/운영체제/모의시험/모의시험/모의시험_01_정답.md",
+    "1.Project/운영체제/모의시험/모의시험/모의시험_04_문제.pdf",
+    "1.Project/운영체제/모의시험/모의시험/모의시험_03_문제.pdf",
     "Untitled.canvas",
     "무제 파일.canvas"
   ]
