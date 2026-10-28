@@ -4,67 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "916d7fddfe5a678b",
+        "id": "ffbb4716471516b2",
         "type": "tabs",
         "children": [
           {
-            "id": "cf9c7fff24553964",
+            "id": "49881251bd4b3935",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/운영체제/운영체제 정리.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "운영체제 정리"
-            }
-          },
-          {
-            "id": "f625c8873a319148",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/운영체제/모의시험/운영체제 모의시험.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "운영체제 모의시험"
-            }
-          },
-          {
-            "id": "a3b524e2ef4d7ed3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/운영체제/모의시험/중간고사_최종본.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "중간고사_최종본"
-            }
-          },
-          {
-            "id": "5deb63d5e6faeeb8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1.Project/운영체제/모의시험/모의시험_06_답지.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "모의시험_06_답지"
+              "title": "새 탭"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -271,29 +224,41 @@
       "codex-panel:Open panel": false
     }
   },
-  "active": "a3b524e2ef4d7ed3",
+  "active": "49881251bd4b3935",
   "lastOpenFiles": [
-    "1.Project/운영체제/모의시험/모의시험_06_정답.md",
-    "1.Project/운영체제/모의시험/모의시험_06_문제.pdf",
+    "1.Project/자연어처리 입문/자연어처리 입문 정리.md",
+    "1.Project/전산신호처리/정리/4. Linear Systems and Convolution.md",
+    "1.Project/전산신호처리/중간고사 대비/중간대비 문제1.md",
+    "1.Project/전산신호처리/전산신호처리 정리.md",
+    "1.Project/전산신호처리/중간고사 대비/중간개념 총정리.md",
+    "1.Project/전산신호처리/중간고사 대비/중간대비 문제1.pdf",
+    "1.Project/자연어처리 입문/정리/자연어처리 중간고사 대비.md",
+    "1.Project/전산신호처리/정리/3. Linear System.md",
+    "1.Project/전산신호처리/전산신호처리 과제 목록.md",
+    "1.Project/자연어처리 입문/정리/자연어처리_중간고사_모의시험_A_정답해설.md",
+    "1.Project/자연어처리 입문/정리/중간고사 개념 복습.md",
+    "1.Project/자연어처리 입문/정리/자연어처리_중간고사_모의시험_A_채점.md",
+    "1.Project/자연어처리 입문/정리/자연어처리_중간고사_모의시험_B_정답해설.md",
+    "1.Project/자연어처리 입문/정리/자연어처리_중간고사_모의시험_B_문제.pdf",
+    "1.Project/자연어처리 입문/정리/자연어처리_중간고사_모의시험_A_풀이.pdf",
+    "1.Project/자연어처리 입문/정리/자연어처리_중간고사_모의시험_A_정답해설.pdf",
+    "1.Project/자연어처리 입문/정리/자연어처리_중간고사_모의시험_A_문제.pdf",
+    "5.Daily Notes/2026/10/28.md",
+    "1.Project/자연어처리 입문/정리/Regular expressions.md",
+    "1.Project/미분 방정식/중간고사 대비/중간고사 개념확인 문제집 해설.md",
+    "1.Project/미분 방정식/중간고사 대비/개념확인.md",
     "1.Project/운영체제/모의시험/운영체제 모의시험.md",
     "1.Project/운영체제/모의시험/모의시험_06_답지.md",
-    "1.Project/운영체제/운영체제 정리.md",
     "1.Project/운영체제/모의시험/중간고사_최종본.md",
+    "1.Project/운영체제/모의시험/모의시험_06_정답.md",
+    "1.Project/운영체제/모의시험/모의시험_06_문제.pdf",
+    "1.Project/운영체제/운영체제 정리.md",
     "1.Project/운영체제/모의시험/모의시험_05_답지.md",
     "1.Project/운영체제/모의시험/모의시험_05_문제.pdf",
     "1.Project/운영체제/모의시험/모의시험_04_답지.md",
     "1.Project/운영체제/모의시험/모의시험_04_채점.md",
     "1.Project/운영체제/정리/Multi CPU Scheduling.md",
     "1.Project/운영체제/정리/Deadlock.md",
-    "1.Project/운영체제/정리/Semaphore.md",
-    "1.Project/운영체제/정리/Lock.md",
-    "1.Project/운영체제/정리/Concurrency.md",
-    "1.Project/운영체제/정리/Process Scheduling.md",
-    "1.Project/운영체제/정리/From Program to Process.md",
-    "1.Project/운영체제/정리/Limited Direct Execution.md",
-    "1.Project/운영체제/모의시험/모의시험_03_정답.md",
-    "1.Project/운영체제/모의시험/모의시험_03_답지.md",
-    "1.Project/운영체제/모의시험/모의시험_03_채점.md",
     "1.Project/운영체제/모의시험/tmp/pdfs/sheet3.png",
     "1.Project/운영체제/모의시험/tmp/pdfs/sheet2.png",
     "1.Project/운영체제/모의시험/tmp/pdfs/sheet1.png",
@@ -305,19 +270,8 @@
     "1.Project/운영체제/모의시험/tmp/pdfs/check6-06.png",
     "1.Project/운영체제/모의시험/tmp/pdfs/check6-05.png",
     "1.Project/운영체제/모의시험/tmp/pdfs/verified_data.json",
-    "1.Project/운영체제/모의시험/모의시험_05_정답.md",
     "1.Project/운영체제/모의시험/tmp/pdfs/build.py",
     "1.Project/운영체제/모의시험/tmp/pdfs",
-    "1.Project/운영체제/모의시험/tmp",
-    "1.Project/운영체제/정리/What is OS.md",
-    "1.Project/운영체제/모의시험/모의시험_02_채점.md",
-    "1.Project/운영체제/모의시험/모의시험_01_채점.md",
-    "1.Project/운영체제/모의시험/모의시험_02_답지.md",
-    "1.Project/운영체제/모의시험/모의시험_02_문제.pdf",
-    "1.Project/운영체제/모의시험/모의시험.zip",
-    "1.Project/운영체제/모의시험/모의시험/모의시험_01_정답.md",
-    "1.Project/운영체제/모의시험/모의시험/모의시험_04_문제.pdf",
-    "1.Project/운영체제/모의시험/모의시험/모의시험_03_문제.pdf",
     "Untitled.canvas",
     "무제 파일.canvas"
   ]
