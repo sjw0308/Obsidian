@@ -4,5 +4,6 @@
     "unicalendar-ko"
   ],
   "theme": "obsidian",
-  "monospaceFontFamily": "Fira Code"
+  "monospaceFontFamily": "Fira Code",
+  "showRibbon": true
 }

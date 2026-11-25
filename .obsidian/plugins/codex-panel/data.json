@@ -5,6 +5,7 @@
   "rewriteSelectionModel": null,
   "rewriteSelectionEffort": null,
   "showToolbar": true,
+  "newConversationsEphemeral": false,
   "sendShortcut": "enter",
   "scrollThreadFromComposerEdges": false,
   "referenceActiveNoteOnSend": true,
